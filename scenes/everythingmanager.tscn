@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://beqeulrol1eji"]
+
+[ext_resource type="Script" uid="uid://cdp6544mfx05x" path="res://scripts/everythingManager.gd" id="1_1trim"]
+[ext_resource type="PackedScene" uid="uid://bgpxod4jmw4cm" path="res://trim from final project/9A/9A.tscn" id="2_oon43"]
+[ext_resource type="Script" uid="uid://c1lg5mvdmxhjx" path="res://scripts/worldcamera.gd" id="3_l6lpc"]
+
+[node name="N2D_EverythingManager" type="Node2D"]
+script = ExtResource("1_1trim")
+
+[node name="N2D_BadPacketCore" parent="." instance=ExtResource("2_oon43")]
+
+[node name="C2D_WorldCamera" type="Camera2D" parent="."]
+script = ExtResource("3_l6lpc")
+
+[node name="Container" type="Container" parent="."]
+offset_right = 23.0
+offset_bottom = 34.0

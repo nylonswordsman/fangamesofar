@@ -1,0 +1,3 @@
+## comments that look like this are notes for later
+# comments that look like this are attempting to explain the code
+#comments that look like this are code that has been switched off
