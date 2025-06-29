@@ -1,5 +1,5 @@
 # writes party's books to the starting ones
-# everythingmanager will write over them whenever the game is saved
+# mapcore will write over them whenever the game is saved
 # this is only used upon starting a new run
 @export var expieBooks: Array[Dictionary] = [
 	{
