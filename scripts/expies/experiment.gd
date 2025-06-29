@@ -70,18 +70,15 @@ signal askForBook
 func translateBook(book):
 	set("openedBook", Dictionary(book))
 
-func requestBook(event):
-	if event.is_action_pressed("upArrow"):
-		emit_signal("askForBook")
+
 
 func _input(event):
+	if event.is_action_pressed("upArrow"):
+		emit_signal("askForBook")
 	if event.is_action_pressed("rightArrow"):
 		print(expieName)
-
-func transcribeBook(event):
 	if event.is_action_pressed("downArrow"):
 		set("expieName", String(openedBook.expieName))
-
 
 
 
