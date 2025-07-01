@@ -26,7 +26,7 @@ class_name Experiment
 
 var expieSpecies: String = "Experi."
 var expieName: String = "blank"
-var currentMood: int # no maxMood because max mood is 200 for all species
+var currentMood: int # no maxMood because max mood is always 200 for all species
 var currentHunger: int
 var maxHunger: int = 100
 # given before most other things
@@ -64,21 +64,34 @@ var gifts = [0,1,2,3,4,5,6,7]
 # substats are only calculated when they are used
 
 
-signal askForBook
 
 
 func translateBook(book):
 	openedBook = Dictionary(book) # absolutely no need for set func
-
-
+	expieName = openedBook.expieName
+	expieSpecies = openedBook.expieSpecies
+	currentMood = openedBook.currentMood
+	currentHunger = openedBook.currentHunger
+	pointsInSTR = openedBook.pointsInSTR
+	pointsInDEX = openedBook.pointsInDEX
+	pointsInCON = openedBook.pointsInCON
+	pointsInINT = openedBook.pointsInINT
+	pointsInWIS = openedBook.pointsInWIS
+	pointsInCHA = openedBook.pointsInCHA
+	currentOverallIntegrity = openedBook.currentOverallIntegrity
+	currentHeadIntegrity = openedBook.currentHeadIntegrity
+	currentTorsoIntegrity = openedBook.currentTorsoIntegrity
+	currentLArmIntegrity = openedBook.currentLArmIntegrity
+	currentRArmIntegrity = openedBook.currentRArmIntegrity
+	currentLLegIntegrity = openedBook.currentLLegIntegrity
+	currentRLegIntegrity = openedBook.currentRLegIntegrity
+	weapon = openedBook.weapon
+	armor = openedBook.armor
+	gifts = openedBook.gifts
 
 func _input(event):
-	if event.is_action_pressed("upArrow"):
-		emit_signal("askForBook")
 	if event.is_action_pressed("rightArrow"):
 		print(expieName)
-	if event.is_action_pressed("downArrow"):
-		set("expieName", String(openedBook.expieName))
 
 
 
