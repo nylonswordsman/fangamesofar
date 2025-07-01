@@ -18,8 +18,9 @@ func readExpieBooks():
 				var expie = ResourceLoader.load("res://scripts/expies/experiment.tscn")\
 				.instantiate() # load Experiment class as variable
 				add_child(expie) # add an Experiment as child
-				await expie.askForBook
-				call(expie.translateBook(book))
+				await expie.askForBook # < this is bad 
+				print(type_string(typeof(book)))
+				expie.translateBook(book)# There was no need for call func
 				#set("expie.openedBook", Dictionary(book))
 			"Orange":
 				#print(book)

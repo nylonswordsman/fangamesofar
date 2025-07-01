@@ -68,7 +68,7 @@ signal askForBook
 
 
 func translateBook(book):
-	set("openedBook", Dictionary(book))
+	openedBook = Dictionary(book) # absolutely no need for set func
 
 
 
