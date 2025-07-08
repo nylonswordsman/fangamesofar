@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://brjedaiwxf3py"]
+
+[ext_resource type="Script" uid="uid://cvvujuxiarll4" path="res://Scripts/GUI/text_module.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://n8ftvo456d3f" path="res://Scripts/GUI/gui_master.gd" id="1_ig7tw"]
+[ext_resource type="AudioStream" uid="uid://bdcpmbitcbybb" path="res://Sounds/Hover.ogg" id="3_272bh"]
+[ext_resource type="AudioStream" uid="uid://c7vv6maasd3j0" path="res://Sounds/Click.ogg" id="4_5vw27"]
+[ext_resource type="AudioStream" uid="uid://cenekix3v4hb8" path="res://Sounds/Untick.ogg" id="5_kek77"]
+[ext_resource type="AudioStream" uid="uid://cj4yw55n8td8p" path="res://Sounds/SliderTick.ogg" id="6_4c57u"]
+[ext_resource type="AudioStream" uid="uid://dnwyvhsc7bren" path="res://Sounds/Transition.ogg" id="7_efxa6"]
+
+[sub_resource type="Curve" id="Curve_0xm2m"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494681, 1), 0.0, 0.0, 0, 0, Vector2(0.632979, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -5.80899, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_272bh"]
+_limits = [0.0, 1.0, 0.0, 2.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.316872, 0), 0.0, 0.0, 0, 0, Vector2(0.399177, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.09132, 2.81307, 0, 0, Vector2(2, 1), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[node name="main" type="Node2D"]
+
+[node name="TextModule" type="Node2D" parent="."]
+script = ExtResource("1_0xm2m")
+
+[node name="GUILayer" type="CanvasLayer" parent="."]
+layer = 50
+
+[node name="GUIMaster" type="Node2D" parent="GUILayer" node_paths=PackedStringArray("sfx", "SubLayers")]
+process_mode = 3
+script = ExtResource("1_ig7tw")
+sfx = [NodePath("Hover"), NodePath("Click"), NodePath("SliderTick"), NodePath("Start"), NodePath("Menu"), NodePath("Untick"), NodePath("Transition")]
+fadeCruve = SubResource("Curve_0xm2m")
+SubLayers = [NodePath("GUISubLayer"), NodePath("GUISubLayer2")]
+StartIds = Array[int]([0, 0])
+ReturnIds = Array[int]([0, 0])
+PrimaryColor = Color(1, 0.564706, 0, 1)
+SecondaryColor = Color(0.757484, 0.231985, 3.85046e-07, 1)
+BackgroundColor = Color(0.444955, 0.179205, 0, 1)
+HighlightColor = Color(1, 1, 1, 1)
+FlashCurve = SubResource("Curve_272bh")
+
+[node name="Hover" type="AudioStreamPlayer" parent="GUILayer/GUIMaster"]
+stream = ExtResource("3_272bh")
+volume_db = -13.117
+max_polyphony = 32
+bus = &"GUI"
+
+[node name="Click" type="AudioStreamPlayer" parent="GUILayer/GUIMaster"]
+stream = ExtResource("4_5vw27")
+max_polyphony = 4
+bus = &"GUI"
+
+[node name="Untick" type="AudioStreamPlayer" parent="GUILayer/GUIMaster"]
+stream = ExtResource("5_kek77")
+max_polyphony = 4
+bus = &"GUI"
+
+[node name="SliderTick" type="AudioStreamPlayer" parent="GUILayer/GUIMaster"]
+stream = ExtResource("6_4c57u")
+pitch_scale = 2.0
+max_polyphony = 20
+bus = &"GUI"
+
+[node name="Start" type="AudioStreamPlayer" parent="GUILayer/GUIMaster"]
+bus = &"GUI"
+
+[node name="Menu" type="AudioStreamPlayer" parent="GUILayer/GUIMaster"]
+bus = &"GUI"
+
+[node name="Transition" type="AudioStreamPlayer" parent="GUILayer/GUIMaster"]
+stream = ExtResource("7_efxa6")
+pitch_scale = 2.0
+bus = &"GUI"
+
+[node name="GUISubLayer" type="CanvasLayer" parent="GUILayer/GUIMaster"]
+layer = 40
+
+[node name="GUISubLayer2" type="CanvasLayer" parent="GUILayer/GUIMaster"]
+layer = 41
+
+[node name="MenuNode" type="Node2D" parent="."]

@@ -13,7 +13,7 @@ func _ready():
 	for book in currentFile.expieBooks:
 		match book.expieSpecies:
 			"Experi.":
-				var expie = ResourceLoader.load("res://scripts/expies/experiment.tscn")\
+				var expie = ResourceLoader.load("res://Scripts/expies/experiment.tscn")\
 				.instantiate() # load Experiment class as variable
 				add_child(expie) # add an Experiment as child
 				#await expie.askForBook # < this is bad 

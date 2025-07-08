@@ -1,0 +1,88 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://slmkn1hjeyuq"]
+
+[ext_resource type="Script" uid="uid://cjph1n8x3gf3t" path="res://GUILayouts/LayoutResource.gd" id="1_8bk08"]
+
+[resource]
+script = ExtResource("1_8bk08")
+Elements = {
+0: {
+"color": Color(0.444955, 0.179205, 0, 1),
+"name": &"New Panel",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(0, 0, 1152, 648),
+"type": "Panel"
+},
+1: {
+"fontSize": 19,
+"func": "BackToMenu",
+"funcNode": "/root/main/GUILayer/GUIMaster",
+"funcPars": "",
+"name": &"exitButton",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(1028, 619, 120, 25),
+"text": "0Terminate",
+"type": "Button"
+},
+2: {
+"fontSize": 20,
+"func": "TogglePause",
+"funcNode": "master",
+"funcPars": "",
+"name": &"resumeButton",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(4, 619, 126, 25),
+"text": "1Resume",
+"type": "Button"
+},
+3: {
+"color": Color(0.444955, 0.179205, 0, 1),
+"name": &"@Node2D@28",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(8, 8, 464, 409),
+"type": "Panel"
+},
+4: {
+"altValue": true,
+"color": Color(1, 1, 1, 1),
+"fontSize": 10,
+"name": &"New Label",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(13, -3, 38, 10),
+"text": "Pause",
+"type": "Label"
+},
+5: {
+"altValue": true,
+"color": Color(1, 1, 1, 1),
+"fontSize": 10,
+"name": &"setupText",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(46, 5, 40, 10),
+"text": "Setup",
+"type": "Label"
+},
+6: {
+"fontSize": 10,
+"func": "null",
+"funcNode": "null",
+"funcPars": "",
+"name": &"volumeSlider",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(20, 32, 200, 75),
+"text": "GlobalVolume",
+"type": "Slider"
+},
+7: {
+"fontSize": 10,
+"func": "null",
+"funcNode": "null",
+"funcPars": "",
+"name": &"cb",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(26, 60, 0, 0),
+"text": "RandomCheck",
+"type": "CheckBox"
+}
+}
+returnID = 0
+startID = 0

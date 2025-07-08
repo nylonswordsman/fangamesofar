@@ -1,0 +1,102 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b4tmkbgm686ih"]
+
+[ext_resource type="Script" uid="uid://cjph1n8x3gf3t" path="res://GUILayouts/LayoutResource.gd" id="1_3wqck"]
+
+[resource]
+script = ExtResource("1_3wqck")
+Elements = {
+0: {
+"fontSize": 20,
+"func": "FadeToScene",
+"funcNode": "master",
+"funcPars": "scenes/everythingmanager.tscn,string;true,bool",
+"name": &"playButton",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(0, 623, 120, 25),
+"text": "1Initiate",
+"type": "Button"
+},
+1: {
+"fontSize": 20,
+"func": "null",
+"funcNode": "null",
+"funcPars": "",
+"name": &"settingsButton",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(120, 623, 120, 25),
+"text": "2Setup",
+"type": "Button"
+},
+2: {
+"fontSize": 16,
+"func": "null",
+"funcNode": "null",
+"funcPars": "",
+"name": &"exit",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(1032, 623, 120, 25),
+"text": "0Quit",
+"type": "Button"
+},
+3: {
+"fontSize": 10,
+"func": "null",
+"funcNode": "null",
+"funcPars": "",
+"name": &"New CheckBox",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(63, 129, 0, 0),
+"text": "Settings",
+"type": "CheckBox"
+},
+4: {
+"fontSize": 10,
+"func": "null",
+"funcNode": "null",
+"funcPars": "",
+"name": &"New Slider",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(154, 138, 200, 75),
+"text": "Slider",
+"type": "Slider"
+},
+5: {
+"altValue": false,
+"func": "null",
+"funcNode": "null",
+"name": &"New List",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(384, 85, 100, 300),
+"type": "List"
+},
+6: {
+"altValue": false,
+"color": Color(1, 1, 1, 1),
+"fontSize": 16,
+"name": &"New Label",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(522, 111, 75, 20),
+"text": "fuck you",
+"type": "Label"
+},
+7: {
+"color": Color(0, 0, 0, 1),
+"name": &"New Panel",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(551, 330, 108, 64),
+"type": "Panel"
+},
+8: {
+"fontSize": 20,
+"func": "FadeToScene",
+"funcNode": "/root/main/GUILayer/GUIMaster",
+"funcPars": "gui_editor.tscn,string",
+"name": &"edit",
+"neighbours": Vector4i(-1, -1, -1, -1),
+"rect": Rect2i(240, 623, 120, 25),
+"text": "3Edit",
+"type": "Button"
+}
+}
+returnID = 0
+startID = 0

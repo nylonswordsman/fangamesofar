@@ -1,6 +1,6 @@
 [gd_resource type="PackedDataContainer" load_steps=2 format=3 uid="uid://bp7budit05lbu"]
 
-[ext_resource type="Script" uid="uid://b42bhv3q55hj1" path="res://scripts/expieBookRewriter.gd" id="1_7itov"]
+[ext_resource type="Script" uid="uid://b42bhv3q55hj1" path="res://Scripts/expieBookRewriter.gd" id="1_7itov"]
 
 [resource]
 script = ExtResource("1_7itov")
