@@ -255,7 +255,7 @@ func _process(delta: float) -> void:
 					lastHover = element
 			"Slider":
 				var elRect:Rect2i = get_node(elements.get(element).get("path")).Rect
-				var SliderR:Rect2i = Rect2i(elRect.position+Vector2i(elRect.size.y,-7.5),Vector2i(8,15))
+				var SliderR:Rect2i = Rect2i(elRect.position+Vector2i(elRect.size.y-5,-5),Vector2i(10,10))
 				if SliderR.has_point(mousePosi):
 					if lastHover != element&&heldID!=element:sfx[0].play()
 					hoveredID = element

@@ -16,9 +16,9 @@ var selected = false
 var held = false
 var animations = 0
 var hoverAnim = 0
-var colorAnim = 0
 var slideValue = 0
 var lastPos = 0
+var click = 0
 var offset:float
 var colorCurve:Curve = Curve.new()
 # Called when the node enters the scene tree for the first time.
@@ -46,26 +46,27 @@ func _process(delta: float) -> void:
 		if slideValue<=0:
 			master.sfx[2].play()
 			slideValue=15
+			click=6
 		slideValue -= abs(Rect.size.y - lastPos)
 		lastPos = Rect.size.y
 	else:slideValue = 0
 	if selected||held||animations>0:queue_redraw()
 	if selected||held:
 		animations = hoverAnim+1
-		if hoverAnim<8: hoverAnim+=1
-		else: colorAnim +=1
-		if colorAnim>30:colorAnim=0
+		if hoverAnim<12: hoverAnim+=1
 	else:
 		if hoverAnim>0:hoverAnim-=1
-		colorAnim = 0
-	
+	if click>0:click-=1
 	pass
 
 func _draw() -> void:
 	draw_set_transform(Rect.position)
 	draw_string(master.font,Vector2i(0,-11),Text,1,-1,FontSize)
-	draw_line(Vector2(0,0),Vector2(Rect.size.x,0),Color.LIGHT_GRAY)
-	var r:Rect2i = Rect2i(-(hoverAnim/4)+Rect.size.y,-7.5-(hoverAnim/4),8+(hoverAnim/2),15+(hoverAnim/2))
-	draw_rect(r,Color.BLACK)
-	draw_rect(r,Color.WHITE,false,1)
-	draw_rect(Rect2i(Rect.size.y,-7.5,8,15),Color(1,1,1,colorCurve.sample(colorAnim/30.0)),false,1)
+	draw_line(Vector2(0,0),Vector2(Rect.size.x,0),master.SecondaryColor)
+	draw_circle(Vector2(Rect.size.y,0),5,master.BackgroundColor)
+	draw_circle(Vector2(Rect.size.y,0),4.5,master.PrimaryColor,false,1)
+	if selected||held:
+		draw_circle(Vector2(Rect.size.y,0),5,Color(Color.WHITE,\
+		master.FlashCurve.sample((hoverAnim/12.0)+(click/6.0))))
+		draw_circle(Vector2(Rect.size.y,0),4.5,Color(Color.BLACK,\
+		master.FlashCurve.sample((hoverAnim/12.0)+(click/6.0))),false,1)
