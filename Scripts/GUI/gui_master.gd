@@ -38,6 +38,7 @@ var textModule:TextModule
 @export var SecondaryColor:Color
 @export var BackgroundColor:Color
 @export var HighlightColor:Color
+@export var HighTextColor:Color
 @export var FlashCurve:Curve
 
 func Fade(playSfx:bool=true) -> void:
@@ -308,7 +309,7 @@ func _process(delta: float) -> void:
 					if node.SelectedItem!=-1:
 						node.click = 8
 						sfx[1].play()
-						node.callable.callv(node.Value)
+						#node.callable.callv(node.Value)
 	if Input.is_action_just_released("GUICursorAction"):heldID = -1
 
 func ElementCallFunc(element:Node2D) -> void:

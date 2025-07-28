@@ -4,7 +4,7 @@ var master:GuiMaster
 var objID
 var Type:String = "List"
 @export var Rect:Rect2i = Rect2i(0,0,100,300)
-@export var BorderWidth = 2
+@export var BorderWidth = 1
 @export var Items:Array[String]
 @export var Function:String = "null"
 @export var FuncNode:String = "null"
@@ -78,7 +78,11 @@ func _process(delta: float) -> void:
 	pass
 
 func _draw() -> void:
-	var animSize = clamp(hoverAnim,0,6)+click
-	draw_rect(Rect2i(Rect.position,Rect.size),Color.BLACK)
-	draw_rect(Rect2i(Rect.position,Rect.size),Color.WHITE,false,BorderWidth)
+	draw_rect(Rect2i(Rect.position,Rect.size),master.BackgroundColor)
+	
+	draw_rect(Rect2i(Rect.position+Vector2i(Rect.size.x-4,0),Vector2i(4,Rect.size.y)),master.SecondaryColor)
+	draw_rect(Rect2i(Rect.position+Vector2i(Rect.size.x-4,offset*(Rect.size.y/(Items.size()*20.0+16))),Vector2i(4,Rect.size.y*(Rect.size.y/(Items.size()*20.0+16)))),master.PrimaryColor)
+	
+	draw_rect(Rect2i(Rect.position,Rect.size),master.PrimaryColor,false,BorderWidth)
+	draw_rect(Rect2i(Rect.position-Vector2i(4,4),Rect.size+Vector2i(8,8)),master.PrimaryColor,false,BorderWidth)
 	

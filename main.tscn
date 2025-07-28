@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://brjedaiwxf3py"]
+[gd_scene load_steps=11 format=3 uid="uid://brjedaiwxf3py"]
 
 [ext_resource type="Script" uid="uid://cvvujuxiarll4" path="res://Scripts/GUI/text_module.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://n8ftvo456d3f" path="res://Scripts/GUI/gui_master.gd" id="1_ig7tw"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cenekix3v4hb8" path="res://Sounds/Untick.ogg" id="5_kek77"]
 [ext_resource type="AudioStream" uid="uid://cj4yw55n8td8p" path="res://Sounds/SliderTick.ogg" id="6_4c57u"]
 [ext_resource type="AudioStream" uid="uid://dnwyvhsc7bren" path="res://Sounds/Transition.ogg" id="7_efxa6"]
+[ext_resource type="Script" uid="uid://dyy2co53388r2" path="res://menu_node.gd" id="8_5vw27"]
 
 [sub_resource type="Curve" id="Curve_0xm2m"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494681, 1), 0.0, 0.0, 0, 0, Vector2(0.632979, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -5.80899, 0.0, 0, 0]
@@ -79,3 +80,4 @@ layer = 40
 layer = 41
 
 [node name="MenuNode" type="Node2D" parent="."]
+script = ExtResource("8_5vw27")

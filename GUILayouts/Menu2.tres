@@ -1,6 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d1iwecfiawifv"]
 
-[ext_resource type="Script" path="res://GUILayouts/LayoutResource.gd" id="1_inwjd"]
+[ext_resource type="Script" uid="uid://cjph1n8x3gf3t" path="res://GUILayouts/LayoutResource.gd" id="1_inwjd"]
 
 [resource]
 script = ExtResource("1_inwjd")

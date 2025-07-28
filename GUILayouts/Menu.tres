@@ -64,7 +64,7 @@ Elements = {
 "altValue": false,
 "func": "null",
 "funcNode": "null",
-"name": &"New List",
+"name": &"ListTesting",
 "neighbours": Vector4i(-1, -1, -1, -1),
 "rect": Rect2i(384, 85, 100, 300),
 "type": "List"
