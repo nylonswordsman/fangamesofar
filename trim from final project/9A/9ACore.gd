@@ -2,7 +2,6 @@ extends Node2D
 
 
 
-
 func _ready():
 	## multiple save support is a later thing. for now only save1 is available
 	## im lazy. cry about it lmao. ill do it after release probably
@@ -31,7 +30,6 @@ func _ready():
 			_:
 				#print("empty")
 				pass
-
 
 ## have a bunch of the newly created expie object's variables overwritten
 ## by the contents of book in params of this function

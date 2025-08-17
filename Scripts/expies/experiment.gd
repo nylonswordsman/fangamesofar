@@ -1,9 +1,11 @@
 extends Node2D
 class_name Experiment
 
+var astarnavi = AStar2D.new()
+
 @export var openedBook: Dictionary = {
-	"expieSpecies": "fuck",
-	"expieName": "fuck",
+	"expieSpecies": "None",
+	"expieName": "Nu",
 	"currentMood": 5,
 	"currentHunger": 5,
 	"pointsInSTR": 5,
@@ -19,8 +21,8 @@ class_name Experiment
 	"currentRArmIntegrity": 5,
 	"currentLLegIntegrity": 5,
 	"currentRLegIntegrity": 5,
-	"weapon": "fuck",
-	"armor": "fuck",
+	"weapon": "equipment system not ready",
+	"armor": "equipment system not ready",
 	"gifts": [0,1,2,3,4,5,6,7],
 }
 
