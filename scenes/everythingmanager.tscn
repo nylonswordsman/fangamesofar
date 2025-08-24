@@ -11,7 +11,3 @@ script = ExtResource("1_1trim")
 
 [node name="C2D_WorldCamera" type="Camera2D" parent="."]
 script = ExtResource("3_l6lpc")
-
-[node name="Container" type="Container" parent="."]
-offset_right = 23.0
-offset_bottom = 34.0

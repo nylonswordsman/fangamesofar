@@ -22,6 +22,7 @@ var astarnavi = AStar2D.new()
 	"currentLLegIntegrity": 5,
 	"currentRLegIntegrity": 5,
 	"weapon": "equipment system not ready",
+	"helditem": "equipment system not ready",
 	"armor": "equipment system not ready",
 	"gifts": [0,1,2,3,4,5,6,7],
 }
