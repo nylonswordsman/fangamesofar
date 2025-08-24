@@ -12,12 +12,13 @@ func _ready():
 	for book in currentFile.expieBooks:
 		match book.expieSpecies:
 			"Experi.":
+				# load Experiment class as variable
 				var expie = ResourceLoader.load("res://Scripts/expies/experiment.tscn")\
-				.instantiate() # load Experiment class as variable
-				add_child(expie) # add an Experiment as child
-				#await expie.askForBook # < this is bad 
+				.instantiate()
+				# add an Experiment as child
+				add_child(expie)
 				print(type_string(typeof(book)))
-				expie.translateBook(book)# There was no need for call func
+				expie.translateBook(book)
 			"Orange":
 				#print(book)
 				pass
@@ -30,6 +31,3 @@ func _ready():
 			_:
 				#print("empty")
 				pass
-
-## have a bunch of the newly created expie object's variables overwritten
-## by the contents of book in params of this function

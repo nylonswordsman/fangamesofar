@@ -43,7 +43,7 @@ var maxLLegIntegrity: int = 30+(CON*6)
 var maxRLegIntegrity: int = 30+(CON*6)
 # The only stats outside of the book
 func translateBook(book):
-	openedBook = Dictionary(book) # absolutely no need for set func
+	openedBook = Dictionary(book)
 	## add a + or - after the 5 for other species stat mods
 	## remove this comment once other species classes are being made
 	STR = 5 + openedBook.get("pointsInSTR")

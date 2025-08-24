@@ -17,5 +17,7 @@ func _process(delta: float) -> void:
 		targetPos += Vector2(delta*speed,0)
 	# very basic 'move pos' stuff
 	
+	
+	
 	global_position = lerp(global_position,targetPos,5*delta) 
 	# lerping to the target pos
