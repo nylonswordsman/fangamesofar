@@ -17,6 +17,7 @@ expieBooks = Array[Dictionary]([{
 "currentTorsoIntegrity": 30,
 "expieName": "Epsilon",
 "expieSpecies": "Experi.",
+"expieStatus": "WFSTFTSS",
 "gifts": [0, 1, 2, 3, 4, 5, 6, 7],
 "helditem": "placeholder",
 "pointsInCHA": 0,

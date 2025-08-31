@@ -13,12 +13,12 @@ func _ready():
 		match book.expieSpecies:
 			"Experi.":
 				# load Experiment class as variable
-				var expie = ResourceLoader.load("res://Scripts/expies/experiment.tscn")\
+				var expieToLoad = ResourceLoader.load("res://Scripts/expies/experiment.tscn")\
 				.instantiate()
 				# add an Experiment as child
-				add_child(expie)
+				add_child(expieToLoad)
 				print(type_string(typeof(book)))
-				expie.translateBook(book)
+				expieToLoad.translateBook(book)
 			"Orange":
 				#print(book)
 				pass
@@ -31,3 +31,14 @@ func _ready():
 			_:
 				#print("empty")
 				pass
+
+
+
+
+# just seeing which of these functions are available to me
+# probably will not use these. ah. exceedingly poorly optimized solutions.
+# i wanna do expie selection at some point
+#func _input(event):
+	#if event.is_action_pressed("leftMouse"):
+		#(get_global_mouse_position())
+		#pass

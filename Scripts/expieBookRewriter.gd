@@ -5,6 +5,7 @@
 	{
 	"expieSpecies": "Experi.",
 	"expieName": "Epsilon",
+	"expieStatus": "WFSTFTSS", # waiting for someone to finish the status system
 	"currentMood": 125,
 	"currentHunger": 100,
 	"currentOverallIntegrity": 150,
@@ -28,6 +29,7 @@
 	{
 	"expieSpecies": "Orange",
 	"expieName": "Gamma",
+	"expieStatus": "WFSTFTSS",
 	"currentMood": 135,
 	"currentHunger": 120,
 	"currentOverallIntegrity": 150,
@@ -51,6 +53,7 @@
 	{
 	"expieSpecies": "Milky",
 	"expieName": "Tau",
+	"expieStatus": "WFSTFTSS",
 	"currentMood": 130,
 	"currentHunger": 90,
 	"currentOverallIntegrity": 150,
@@ -74,6 +77,7 @@
 	{
 	"expieSpecies": "Hauler",
 	"expieName": "Psi",
+	"expieStatus": "WFSTFTSS",
 	"currentMood": 130,
 	"currentHunger": 130,
 	"currentOverallIntegrity": 150,
@@ -97,6 +101,7 @@
 	{
 	"expieSpecies": "null",
 	"expieName": "null",
+	"expieStatus": "WFSTFTSS",
 	"currentMood": 200,
 	"currentHunger": 100,
 	"currentOverallIntegrity": 150,
@@ -120,6 +125,7 @@
 	{
 	"expieSpecies": "null",
 	"expieName": "null",
+	"expieStatus": "WFSTFTSS",
 	"currentMood": 200,
 	"currentHunger": 100,
 	"currentOverallIntegrity": 150,
@@ -143,6 +149,7 @@
 	{
 	"expieSpecies": "null",
 	"expieName": "null",
+	"expieStatus": "WFSTFTSS",
 	"currentMood": 200,
 	"currentHunger": 100,
 	"currentOverallIntegrity": 150,
@@ -166,6 +173,7 @@
 	{
 	"expieSpecies": "null",
 	"expieName": "null",
+	"expieStatus": "WFSTFTSS",
 	"currentMood": 200,
 	"currentHunger": 100,
 	"currentOverallIntegrity": 150,
