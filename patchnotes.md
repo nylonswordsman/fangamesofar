@@ -1,10 +1,12 @@
-fuck this shit<br>
-patchnotes i guess<br>
+patchnotes<br>
 made after sunday streams 00-02 so no patch notes for those<br>
-testig<br>
 <br>
 ### sunday stream 04
 * yet to be recorded...
+
+### interlude 03.1
+* removed navigation layer, agent and region
+* un-commented aStar systems
 
 ### sunday stream 03
 * added a Navigation Layer to `tml_floor_9a.gd`, painted the top 2 rows of tiles (or top 6 tiles) with it

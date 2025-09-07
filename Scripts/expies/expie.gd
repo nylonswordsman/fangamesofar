@@ -2,7 +2,7 @@ extends Node2D
 class_name expie
 
 #region aStar
-#var aStarNavi = AStar2D.new()
+var aStarNavi = AStar2D.new()
 #endregion
 
 @export var openedBook: Dictionary = {
