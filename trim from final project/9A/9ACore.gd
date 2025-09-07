@@ -36,7 +36,7 @@ func _ready():
 
 
 # just seeing which of these functions are available to me
-# probably will not use these. ah. exceedingly poorly optimized solutions.
+# probably will not use these, ah... exceedingly poorly optimized solutions.
 # i wanna do expie selection at some point
 #func _input(event):
 	#if event.is_action_pressed("leftMouse"):

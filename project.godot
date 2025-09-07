@@ -309,7 +309,7 @@ rightMouse={
 [layer_names]
 
 2d_navigation/layer_1="walkable"
-2d_navigation/layer_2="nonwalkable"
+2d_navigation/layer_2="Layer 2"
 
 [navigation]
 
