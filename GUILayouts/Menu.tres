@@ -9,7 +9,7 @@ Elements = {
 "fontSize": 20,
 "func": "FadeToScene",
 "funcNode": "master",
-"funcPars": "scenes/everythingmanager.tscn,string;true,bool",
+"funcPars": "scenes/everythingmanager.tscn,string;false,bool",
 "name": &"playButton",
 "neighbours": Vector4i(-1, -1, -1, -1),
 "rect": Rect2i(0, 623, 120, 25),

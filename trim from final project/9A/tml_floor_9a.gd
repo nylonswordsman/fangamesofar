@@ -4,6 +4,7 @@ extends TileMapLayer
 var aStar:AStar2D
 var aStarGrid:AStarGrid2D
 var size = self.get_used_rect().size
+var path:Array[Vector2] = []
 
 func _ready() -> void:
 	# make an aStar
@@ -37,12 +38,22 @@ func _ready() -> void:
 	aStarGrid.region = Rect2i(westmost,northmost,sizeX,sizeY)
 	# make sure the changes we've just made by defining the grid boundaries actually work
 	aStarGrid.update() 
+	for tile in tiles:
+		if get_cell_source_id(tile)==1:aStarGrid.set_point_solid(tile,true)
 	# effectively just calls _draw() in an unintrusive way
+
+func _process(delta: float) -> void:
+	var ae = aStarGrid.get_id_path(Vector2i(0,0),Vector2i(get_global_mouse_position()/17.0))
+	path.clear()
+	for e in ae:
+		path.append(Vector2(e*17.0)+Vector2(6.5,6.5))
+	queue_redraw()
 
 func _draw() -> void:
 	# alias because fffFFFFFFUck draw calls
 	var r = aStarGrid.region
 	# draw the boundary of the map as a harmless effect for debug purposes
 	draw_rect(Rect2i(Vector2i(r.position.x,r.position.y)*17,Vector2i(r.size.x,r.size.y)*17),Color.RED,false,4)
-
+	if path.size()>0:
+		draw_polyline(path,Color.BLUE,2)
 #endregion
