@@ -2,7 +2,7 @@ patchnotes<br>
 made after sunday streams 00-02 so no patch notes for those<br>
 <br>
 ### sunday stream 04
-* yet to be recorded...
+* yet to be noted...
 
 ### interlude 03.1
 * removed navigation layer, agent and region

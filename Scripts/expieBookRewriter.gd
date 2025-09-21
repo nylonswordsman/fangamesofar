@@ -3,6 +3,7 @@
 # this is only used upon starting a new run
 @export var expieBooks: Array[Dictionary] = [
 	{
+	"expieID": 1,
 	"expieSpecies": "Experi.",
 	"expieName": "Epsilon",
 	"expieStatus": "WFSTFTSS", # waiting for someone to finish the status system
@@ -27,6 +28,7 @@
 	"gifts": [0,1,2,3,4,5,6,7],
 	},
 	{
+	"expieID": 2,
 	"expieSpecies": "Orange",
 	"expieName": "Gamma",
 	"expieStatus": "WFSTFTSS",
@@ -51,6 +53,7 @@
 	"gifts": [0,1,2,3,4,5,6,7],
 	},
 	{
+	"expieID": 3,
 	"expieSpecies": "Milky",
 	"expieName": "Tau",
 	"expieStatus": "WFSTFTSS",
@@ -75,6 +78,7 @@
 	"gifts": [0,1,2,3,4,5,6,7],
 	},
 	{
+	"expieID": 4,
 	"expieSpecies": "Hauler",
 	"expieName": "Psi",
 	"expieStatus": "WFSTFTSS",
@@ -99,6 +103,7 @@
 	"gifts": [0,1,2,3,4,5,6,7],
 	},
 	{
+	"expieID": 5,
 	"expieSpecies": "null",
 	"expieName": "null",
 	"expieStatus": "WFSTFTSS",
@@ -123,6 +128,7 @@
 	"gifts": [0,1,2,3,4,5,6,7],
 	},
 	{
+	"expieID": 6,
 	"expieSpecies": "null",
 	"expieName": "null",
 	"expieStatus": "WFSTFTSS",
@@ -147,6 +153,7 @@
 	"gifts": [0,1,2,3,4,5,6,7],
 	},
 	{
+	"expieID": 7,
 	"expieSpecies": "null",
 	"expieName": "null",
 	"expieStatus": "WFSTFTSS",
@@ -171,6 +178,7 @@
 	"gifts": [0,1,2,3,4,5,6,7],
 	},
 	{
+	"expieID": 8,
 	"expieSpecies": "null",
 	"expieName": "null",
 	"expieStatus": "WFSTFTSS",

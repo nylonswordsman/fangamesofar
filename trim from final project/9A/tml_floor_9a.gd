@@ -1,6 +1,5 @@
 extends TileMapLayer
 
-#region aStar
 var aStar:AStar2D
 var aStarGrid:AStarGrid2D
 var size = self.get_used_rect().size
@@ -11,6 +10,8 @@ func _ready() -> void:
 	aStar = AStar2D.new()
 	# make an aStarGrid
 	aStarGrid = AStarGrid2D.new()
+	@warning_ignore("int_as_enum_without_cast", "int_as_enum_without_match")
+	aStarGrid.diagonal_mode = 1
 	# set aStar grid tile size to match tilemaplayer's
 	aStarGrid.cell_size = Vector2i(17,17)
 	# alias so we dont go insane
@@ -42,18 +43,32 @@ func _ready() -> void:
 		if get_cell_source_id(tile)==1:aStarGrid.set_point_solid(tile,true)
 	# effectively just calls _draw() in an unintrusive way
 
-func _process(delta: float) -> void:
-	var ae = aStarGrid.get_id_path(Vector2i(0,0),Vector2i(get_global_mouse_position()/17.0))
-	path.clear()
-	for e in ae:
-		path.append(Vector2(e*17.0)+Vector2(6.5,6.5))
-	queue_redraw()
 
-func _draw() -> void:
-	# alias because fffFFFFFFUck draw calls
-	var r = aStarGrid.region
-	# draw the boundary of the map as a harmless effect for debug purposes
-	draw_rect(Rect2i(Vector2i(r.position.x,r.position.y)*17,Vector2i(r.size.x,r.size.y)*17),Color.RED,false,4)
-	if path.size()>0:
-		draw_polyline(path,Color.BLUE,2)
-#endregion
+
+	## multiple save support is a later thing. for now only save1 is available
+	## im lazy. cry about it lmao. ill do it after release probably
+	# load save1 resource as a variable
+	var currentFile = load("res://data//save1.tres")
+	# load each expie book in expieBooks and individually iterate through
+	# the results in a for loop.
+	for book in currentFile.expieBooks:
+		match book.expieSpecies:
+			"Experi.":
+				# load Experiment class as variable
+				var expieToLoad = load("res://Scripts/expies/experiment.tscn").instantiate()
+				# add an Experiment as child
+				add_child(expieToLoad)
+				print(type_string(typeof(book)))
+				expieToLoad.translateBook(book)
+			"Orange":
+				#print(book)
+				pass
+			"Milky":
+				#print(book)
+				pass
+			"Hauler":
+				#print(book)
+				pass
+			_:
+				#print("empty")
+				pass

@@ -4,10 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://bgpxod4jmw4cm" path="res://trim from final project/9A/9A.tscn" id="2_oon43"]
 [ext_resource type="Script" uid="uid://c1lg5mvdmxhjx" path="res://Scripts/worldcamera.gd" id="3_l6lpc"]
 
-[node name="N2D_EverythingManager" type="Node2D"]
+[node name="EverythingManager" type="Node2D"]
 script = ExtResource("1_1trim")
 
-[node name="N2D_BadPacketCore" parent="." instance=ExtResource("2_oon43")]
+[node name="9ACore" parent="." instance=ExtResource("2_oon43")]
 
-[node name="C2D_WorldCamera" type="Camera2D" parent="."]
+[node name="WorldCamera" type="Camera2D" parent="."]
 script = ExtResource("3_l6lpc")
+
+[editable path="9ACore"]

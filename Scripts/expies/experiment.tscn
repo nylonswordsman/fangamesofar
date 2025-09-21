@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bhuhqeeep05g2" path="res://trim from final project/icon.svg" id="2_hf6ex"]
 
 [node name="Experiment" type="Node2D"]
+z_index = 9
 script = ExtResource("1_j2iio")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 12
 position = Vector2(9.53674e-07, 9.53674e-07)
 scale = Vector2(0.1875, 0.1875)
 texture = ExtResource("2_hf6ex")
