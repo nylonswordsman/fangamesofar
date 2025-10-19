@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://beqeulrol1eji"]
+[gd_scene load_steps=8 format=3 uid="uid://beqeulrol1eji"]
 
 [ext_resource type="Script" uid="uid://cdp6544mfx05x" path="res://Scripts/everythingManager.gd" id="1_1trim"]
 [ext_resource type="PackedScene" uid="uid://bgpxod4jmw4cm" path="res://trim from final project/9A/9A.tscn" id="2_oon43"]
 [ext_resource type="Script" uid="uid://c1lg5mvdmxhjx" path="res://Scripts/worldcamera.gd" id="3_l6lpc"]
+[ext_resource type="Theme" uid="uid://81nbl4bvy5dw" path="res://assets/UIStuff/UI.tres" id="4_whfbe"]
+[ext_resource type="FontFile" uid="uid://bgrunmtwsc7lf" path="res://assets/UIStuff/PixelOperator.ttf" id="5_f3pvo"]
+[ext_resource type="Script" uid="uid://c2j73ayf2ubvu" path="res://Scripts/GUI/versionLabel.gd" id="6_o6emw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2kqml"]
+font = ExtResource("5_f3pvo")
+font_color = Color(1, 1, 1, 0.7764706)
 
 [node name="EverythingManager" type="Node2D"]
 script = ExtResource("1_1trim")
@@ -11,5 +18,53 @@ script = ExtResource("1_1trim")
 
 [node name="WorldCamera" type="Camera2D" parent="."]
 script = ExtResource("3_l6lpc")
+
+[node name="GUI" type="Control" parent="WorldCamera"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="WorldCamera/GUI"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+accessibility_controls_nodes = Array[NodePath]([NodePath("expie1Panel"), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("")])
+theme = ExtResource("4_whfbe")
+columns = 8
+
+[node name="expie1Panel" type="PanelContainer" parent="WorldCamera/GUI/GridContainer"]
+layout_mode = 2
+theme = ExtResource("4_whfbe")
+
+[node name="ColorRect" type="ColorRect" parent="WorldCamera/GUI/GridContainer/expie1Panel"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("4_whfbe")
+color = Color(0.46666667, 0.17254902, 0, 1)
+
+[node name="versionLabel" type="Label" parent="WorldCamera/GUI"]
+self_modulate = Color(1, 1, 1, 0.68235296)
+z_index = 20
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -340.0
+offset_right = -40.0
+offset_bottom = 35.0
+grow_horizontal = 0
+tooltip_text = "{debug: version label. displays the build of the project you are running}"
+text = "if you're seeing this the version label is broken"
+label_settings = SubResource("LabelSettings_2kqml")
+horizontal_alignment = 2
+script = ExtResource("6_o6emw")
 
 [editable path="9ACore"]

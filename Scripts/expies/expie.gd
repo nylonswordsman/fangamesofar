@@ -86,4 +86,3 @@ func recalculateSubstats(): # called when equipment is changed or on load
 #func takeHealing():
 
 ## make sure the expies manage their status somehow.
-## this comment originally had smth about getters and setters in it
