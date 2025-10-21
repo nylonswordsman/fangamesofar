@@ -1,4 +1,4 @@
-# orsonverse fangame/n
+# orsonverse fangame
 this is orsonverse fangame i think
 ## links
 #### design doc
