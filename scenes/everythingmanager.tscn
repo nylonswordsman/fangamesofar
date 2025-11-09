@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://beqeulrol1eji"]
+[gd_scene load_steps=11 format=3 uid="uid://beqeulrol1eji"]
 
 [ext_resource type="Script" uid="uid://cdp6544mfx05x" path="res://Scripts/everythingManager.gd" id="1_1trim"]
 [ext_resource type="PackedScene" uid="uid://bgpxod4jmw4cm" path="res://trim from final project/9A/9A.tscn" id="2_oon43"]
@@ -7,15 +7,25 @@
 [ext_resource type="FontFile" uid="uid://bgrunmtwsc7lf" path="res://assets/UIStuff/PixelOperator.ttf" id="5_f3pvo"]
 [ext_resource type="Script" uid="uid://c2j73ayf2ubvu" path="res://Scripts/GUI/versionLabel.gd" id="6_o6emw"]
 [ext_resource type="Script" uid="uid://dch3ha0bgmwnc" path="res://scenes/log_entry.gd" id="7_f3pvo"]
+[ext_resource type="Script" uid="uid://ddfqma02iycmf" path="res://scenes/expie_1_panel.gd" id="8_o6emw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2kqml"]
 font = ExtResource("5_f3pvo")
 font_color = Color(1, 1, 1, 0.7764706)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3pvo"]
+bg_color = Color(0.38696697, 0.13778436, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.57254905, 0, 1)
+
 [node name="EverythingManager" type="Node2D"]
 script = ExtResource("1_1trim")
 
 [node name="9ACore" parent="." instance=ExtResource("2_oon43")]
+unique_name_in_owner = true
 
 [node name="WorldCamera" type="Camera2D" parent="."]
 script = ExtResource("3_l6lpc")
@@ -76,21 +86,26 @@ script = ExtResource("6_o6emw")
 
 [node name="expie1Panel" type="PanelContainer" parent="WorldCamera/CanvasLayer"]
 z_index = 20
-offset_left = 304.0
+offset_left = 303.0
 offset_top = 497.0
-offset_right = 410.0
+offset_right = 409.0
 offset_bottom = 648.0
 theme = ExtResource("4_whfbe")
+theme_override_styles/panel = SubResource("StyleBoxFlat_f3pvo")
+script = ExtResource("8_o6emw")
 
-[node name="ColorRect" type="ColorRect" parent="WorldCamera/CanvasLayer/expie1Panel"]
-z_index = 21
+[node name="Expie1NameLabel" type="Label" parent="WorldCamera/CanvasLayer/expie1Panel"]
+z_index = 22
 layout_mode = 2
-mouse_filter = 2
 theme = ExtResource("4_whfbe")
-color = Color(0.38696697, 0.13778436, 0, 1)
+theme_override_colors/font_color = Color(1, 0.57254905, 0, 1)
+theme_override_fonts/font = ExtResource("5_f3pvo")
+theme_override_font_sizes/font_size = 14
+text = "Expie1Name"
 
 [node name="TabContainer" type="TabContainer" parent="WorldCamera/CanvasLayer"]
+offset_top = 1.0
 offset_right = 304.0
-offset_bottom = 497.0
+offset_bottom = 498.0
 
 [editable path="9ACore"]

@@ -5,6 +5,12 @@ var aStarGrid:AStarGrid2D
 var size = self.get_used_rect().size
 var path:Array[Vector2] = []
 
+
+### note: im prolly thinking later we have this one do the worldgen stuff too
+### off a set of parameters based on what floor the player's on. that'll 
+### already be memorized by the save so why not lol
+
+
 func _ready() -> void:
 	# make an aStar
 	aStar = AStar2D.new()

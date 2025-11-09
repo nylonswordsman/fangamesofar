@@ -4,6 +4,7 @@ class_name expie
 var aStarNavi = AStar2D.new()
 @onready var tML = get_parent()
 var selected: bool = 0
+signal broadcast_expie_id(id_speaking, id_holder)
 
 @export var openedBook: Dictionary = {
 	"expieID": 0,
@@ -31,7 +32,8 @@ var selected: bool = 0
 	"gifts": [0,1,2,3,4,5,6,7],
 }
 
-# no need to calculate stats here, thats handled (w/ species mods!) in {species}.translateBook()
+# no need to calculate stats here, thats handled (w/ species mods!) in
+# {species}.translateBook()
 var STR: int = 5
 var DEX: int = 5
 var CON: int = 5
@@ -46,6 +48,10 @@ var maxRArmIntegrity: int = 20+(CON*4)
 var maxLLegIntegrity: int = 30+(CON*6)
 var maxRLegIntegrity: int = 30+(CON*6)
 # ^ These stats are outside of the book
+
+func _ready():
+	broadcast_expie_id.emit(self.openedBook.expieID, self)
+	pass
 
 func _input(_event):
 	if Input.is_action_just_pressed("QuickSelectExpie1"):
