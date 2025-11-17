@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://81nbl4bvy5dw"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://81nbl4bvy5dw"]
 
 [ext_resource type="FontFile" uid="uid://bgrunmtwsc7lf" path="res://assets/UIStuff/PixelOperator.ttf" id="1_hyf1y"]
 [ext_resource type="FontFile" uid="uid://drin5xq03sp1l" path="res://assets/UIStuff/PixelOperator8.ttf" id="2_yqr00"]
@@ -18,15 +18,18 @@ border_color = Color(1, 0.57254905, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyf1y"]
 content_margin_left = 1.0
 content_margin_right = 1.0
-bg_color = Color(0.28627452, 0.09411765, 0, 1)
+bg_color = Color(0.19215687, 0.07450981, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(1, 0.57254905, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahi04"]
+bg_color = Color(0.2904831, 0.12526225, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmodi"]
-bg_color = Color(0.3882353, 0.13725491, 0, 1)
+bg_color = Color(0.19215687, 0.07450981, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -35,7 +38,8 @@ border_color = Color(1, 0.57254905, 0, 1)
 
 [resource]
 default_font = ExtResource("1_hyf1y")
-/colors/BGOrange = Color(0.38696697, 0.13778436, 0, 1)
+/colors/BGOrange = Color(0.19215687, 0.07450981, 0, 1)
+/colors/BorderOrange = Color(0.78039217, 0.29803923, 0, 1)
 /colors/Grey = Color(0.29803923, 0.29803923, 0.29803923, 1)
 /colors/Magenta = Color(0.93333334, 0, 0.93333334, 1)
 /colors/Red = Color(0.93333334, 0, 0, 1)
@@ -53,6 +57,7 @@ LineEdit/font_sizes/font_size = 12
 LineEdit/fonts/font = ExtResource("1_hyf1y")
 LineEdit/styles/focus = SubResource("StyleBoxFlat_hyf1y")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_hyf1y")
+TabBar/styles/tab_focus = SubResource("StyleBoxFlat_ahi04")
 TabContainer/font_sizes/font_size = 14
 TabContainer/fonts/font = ExtResource("1_hyf1y")
 TabContainer/styles/panel = SubResource("StyleBoxFlat_gmodi")

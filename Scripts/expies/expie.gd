@@ -4,7 +4,7 @@ class_name expie
 var aStarNavi = AStar2D.new()
 @onready var tML = get_parent()
 var selected: bool = 0
-signal broadcast_expie_id(id_speaking, id_holder)
+signal broadcast_expie_id(emitter)
 
 @export var openedBook: Dictionary = {
 	"expieID": 0,
@@ -50,8 +50,8 @@ var maxRLegIntegrity: int = 30+(CON*6)
 # ^ These stats are outside of the book
 
 func _ready():
-	broadcast_expie_id.emit(self.openedBook.expieID, self)
-	pass
+	# emit a signal with own instance id (defined at the top) attached
+	broadcast_expie_id.emit(get_instance_id())
 
 func _input(_event):
 	if Input.is_action_just_pressed("QuickSelectExpie1"):

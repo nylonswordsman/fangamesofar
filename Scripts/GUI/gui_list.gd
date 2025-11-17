@@ -45,7 +45,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	selected = master.hoveredID==objID
 	if !selected:SelectedItem=-1
 	if SelectedItem!=-1:
@@ -81,6 +81,7 @@ func _draw() -> void:
 	draw_rect(Rect2i(Rect.position,Rect.size),master.BackgroundColor)
 	
 	draw_rect(Rect2i(Rect.position+Vector2i(Rect.size.x-4,0),Vector2i(4,Rect.size.y)),master.SecondaryColor)
+	@warning_ignore("narrowing_conversion")
 	draw_rect(Rect2i(Rect.position+Vector2i(Rect.size.x-4,offset*(Rect.size.y/(Items.size()*20.0+16))),Vector2i(4,Rect.size.y*(Rect.size.y/(Items.size()*20.0+16)))),master.PrimaryColor)
 	
 	draw_rect(Rect2i(Rect.position,Rect.size),master.PrimaryColor,false,BorderWidth)

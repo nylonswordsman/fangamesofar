@@ -1,0 +1,117 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmv0ky5ubsfiv"]
+
+[ext_resource type="Script" uid="uid://c1lg5mvdmxhjx" path="res://Scripts/worldcamera.gd" id="1_kjo65"]
+[ext_resource type="Theme" uid="uid://81nbl4bvy5dw" path="res://assets/UIStuff/UI.tres" id="2_yo0l3"]
+[ext_resource type="Script" uid="uid://dch3ha0bgmwnc" path="res://scenes/log_entry.gd" id="3_4lh7j"]
+[ext_resource type="FontFile" uid="uid://bgrunmtwsc7lf" path="res://assets/UIStuff/PixelOperator.ttf" id="4_6rdvf"]
+[ext_resource type="Script" uid="uid://c2j73ayf2ubvu" path="res://Scripts/GUI/versionLabel.gd" id="5_oeg7o"]
+[ext_resource type="Script" uid="uid://ddfqma02iycmf" path="res://scenes/expiePanel.gd" id="6_r3paj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2kqml"]
+font = ExtResource("4_6rdvf")
+font_color = Color(1, 1, 1, 0.7764706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3pvo"]
+bg_color = Color(0.19215687, 0.07450981, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.57254905, 0, 1)
+
+[node name="WorldCamera" type="Camera2D"]
+script = ExtResource("1_kjo65")
+speed = 175.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LogEntry" type="LineEdit" parent="CanvasLayer"]
+z_index = 23
+offset_top = 627.0
+offset_right = 304.0
+offset_bottom = 648.0
+size_flags_vertical = 8
+theme = ExtResource("2_yo0l3")
+placeholder_text = "it works slight a littl!! yay!!!!!!!"
+emoji_menu_enabled = false
+script = ExtResource("3_4lh7j")
+
+[node name="LogBase" type="PanelContainer" parent="CanvasLayer"]
+z_index = 20
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+offset_right = 304.0
+offset_bottom = -21.0
+grow_vertical = 0
+theme = ExtResource("2_yo0l3")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/LogBase"]
+z_index = 22
+z_as_relative = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LogBase/ScrollContainer"]
+z_index = 23
+layout_mode = 2
+
+[node name="versionLabel" type="Label" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0.68235296)
+z_index = 20
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -176.0
+offset_right = 176.0
+offset_bottom = 35.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+tooltip_text = "Version label which displays the build of the project you are running"
+mouse_filter = 0
+accessibility_name = "Version label"
+accessibility_description = "Displays the build of the project you are running"
+text = "if you're seeing this in-game the version label is broken"
+label_settings = SubResource("LabelSettings_2kqml")
+horizontal_alignment = 1
+script = ExtResource("5_oeg7o")
+
+[node name="expie1Panel" type="PanelContainer" parent="CanvasLayer"]
+z_index = 20
+offset_left = 303.0
+offset_top = 497.0
+offset_right = 409.0
+offset_bottom = 648.0
+theme = ExtResource("2_yo0l3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_f3pvo")
+script = ExtResource("6_r3paj")
+
+[node name="Expie1NameLabel" type="Label" parent="CanvasLayer/expie1Panel"]
+unique_name_in_owner = true
+z_index = 22
+layout_mode = 2
+theme = ExtResource("2_yo0l3")
+theme_override_colors/font_color = Color(1, 0.57254905, 0, 1)
+theme_override_fonts/font = ExtResource("4_6rdvf")
+theme_override_font_sizes/font_size = 14
+text = "Expie1Name"
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
+offset_top = 1.0
+offset_right = 304.0
+offset_bottom = 498.0
+current_tab = 1
+
+[node name="Inspect" type="PanelContainer" parent="CanvasLayer/TabContainer"]
+visible = false
+clip_children = 1
+layout_mode = 2
+theme = ExtResource("2_yo0l3")
+metadata/_tab_index = 0
+
+[node name="Storage" type="PanelContainer" parent="CanvasLayer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/TabContainer/Storage"]
+layout_mode = 2

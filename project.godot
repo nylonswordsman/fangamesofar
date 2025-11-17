@@ -20,9 +20,12 @@ run/max_fps=60
 boot_splash/use_filter=false
 config/icon="uid://dmrs1iswlgkw"
 
+[autoload]
+
+Expie="*res://Scripts/expies/expie.gd"
+
 [display]
 
-window/size/mode=3
 window/size/sharp_corners=true
 window/stretch/mode="canvas_items"
 

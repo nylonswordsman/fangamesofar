@@ -5,5 +5,5 @@ var title = ProjectSettings.get_setting("application/config/name")
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	DisplayServer.window_set_title(str(title) + " | FPS: " + str(Engine.get_frames_per_second()))
