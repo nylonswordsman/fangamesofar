@@ -3,7 +3,7 @@ class_name expie
 
 var aStarNavi = AStar2D.new()
 @onready var tML = get_parent()
-var selected: bool = 0
+var selected: bool = false
 signal broadcast_expie_id(emitter)
 
 @export var openedBook: Dictionary = {
@@ -51,7 +51,8 @@ var maxRLegIntegrity: int = 30+(CON*6)
 
 func _ready():
 	# emit a signal with own instance id (defined at the top) attached
-	broadcast_expie_id.emit(get_instance_id())
+#		broadcast_expie_id.emit(get_instance_id())
+		pass
 
 func _input(_event):
 	if Input.is_action_just_pressed("QuickSelectExpie1"):
@@ -61,10 +62,8 @@ func _input(_event):
 			pass
 		pass
 #region debug
-	if Input.is_action_pressed("rightMouse"):
-		print(openedBook)
-		print(maxHeadIntegrity)
-		print(selected)
+#	if Input.is_action_pressed("rightMouse"):
+#		broadcast_expie_id.emit(self as Object)
 #endregion
 
 func recalculateSubstats(): # called when equipment is changed or on load

@@ -17,6 +17,13 @@ tile_set = ExtResource("1_t7xqr")
 occlusion_enabled = false
 script = ExtResource("3_1qbyj")
 
+[node name="braindeadExpie1" type="Node2D" parent="TML_Floor"]
+unique_name_in_owner = true
+
+[node name="braindeadExpie2" type="Node2D" parent="TML_Floor"]
+
+[node name="braindeadExpie3" type="Node2D" parent="TML_Floor"]
+
 [node name="expieNavigator" type="Node2D" parent="." node_paths=PackedStringArray("tML")]
 unique_name_in_owner = true
 z_index = 10

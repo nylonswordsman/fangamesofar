@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://81nbl4bvy5dw" path="res://assets/UIStuff/UI.tres" id="2_yo0l3"]
 [ext_resource type="Script" uid="uid://dch3ha0bgmwnc" path="res://scenes/log_entry.gd" id="3_4lh7j"]
 [ext_resource type="FontFile" uid="uid://bgrunmtwsc7lf" path="res://assets/UIStuff/PixelOperator.ttf" id="4_6rdvf"]
-[ext_resource type="Script" uid="uid://c2j73ayf2ubvu" path="res://Scripts/GUI/versionLabel.gd" id="5_oeg7o"]
+[ext_resource type="Script" uid="uid://c2j73ayf2ubvu" path="res://Scripts/versionLabel.gd" id="5_oeg7o"]
 [ext_resource type="Script" uid="uid://ddfqma02iycmf" path="res://scenes/expiePanel.gd" id="6_r3paj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2kqml"]
@@ -32,7 +32,7 @@ offset_right = 304.0
 offset_bottom = 648.0
 size_flags_vertical = 8
 theme = ExtResource("2_yo0l3")
-placeholder_text = "it works slight a littl!! yay!!!!!!!"
+placeholder_text = "HOLY SHIT GUYS ITS TOM HAULER"
 emoji_menu_enabled = false
 script = ExtResource("3_4lh7j")
 

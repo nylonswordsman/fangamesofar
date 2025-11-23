@@ -4,15 +4,17 @@ extends Node2D
 
 func _process(_delta: float) -> void:
 	var ae = tML.aStarGrid.get_id_path(Vector2i(0,0),Vector2i(get_global_mouse_position()/17.0))
+	### ^ werdom what does this mean
 	tML.path.clear()
-	for e in ae:
+	for e in ae: ### wedom what the fucl does this mean
+		### wedm what the fuck does ae stand for
 		tML.path.append(Vector2(e*17.0)+Vector2(6.5,6.5))
 	queue_redraw()
 
 func _draw() -> void:
 	# alias because fffFFFFFFUck draw calls
-	var r = tML.aStarGrid.region
+	var region = tML.aStarGrid.region
 	# draw the boundary of the map as a harmless effect for debug purposes
-	draw_rect(Rect2i(Vector2i(r.position.x,r.position.y)*17,Vector2i(r.size.x,r.size.y)*17),Color.RED,false,4)
+	draw_rect(Rect2i(Vector2i(region.position.x,region.position.y)*17,Vector2i(region.size.x,region.size.y)*17),Color.RED,false,4)
 	if tML.path.size()>0:
 		draw_polyline(tML.path,Color.ORANGE,2)

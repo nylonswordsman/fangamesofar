@@ -12,23 +12,17 @@ func _ready():
 	# in this class, binding to the callable the instance
 	Expie.broadcast_expie_id.connect(_receive_expie_id.bind())
 
-func _receive_expie_id(emitter: int):
-	print("function _recieve_expie_id called") # debug, remove before flight
-	print("expie panel recieved an id: " + str(emitter)) # debug, remove before flight
+func _receive_expie_id(emitter):
+	
+	# this is accessing the experiment script rather than an individual id.
+	# i think
+	
 	# change the associated expie to the instance id of whoever emitted the
 	# broadcast signal that this panel is listening to
-	associatedExpie = instance_from_id(emitter)
+	associatedExpie = emitter
 	print("expie panel parced entity from recieved id: " + str(associatedExpie))
-	if is_instance_valid(associatedExpie) == true:
-		print("entity is a valid instance") # debug, remove before flight
-		if associatedExpie.is_ancestor_of(Expie) == true:
-			print("entity is an expie") # debug, remove before flight
-		else:
-			print("entity isn't an expie") # debug, remove before flight
-		print(associatedExpie.openedBook.expieID, associatedExpie.openedBook.expieName)
-		%Expie1NameLabel.set_text(associatedExpie.openedBook.expieName)
-	else:
-		print("entity isn't a valid instance") # debug, remove before flight
+	print(associatedExpie.openedBook.expieID, associatedExpie.openedBook.expieName)
+	%Expie1NameLabel.set_text(associatedExpie.openedBook.expieName)
 
 #func _change_expie_name
 #func _change_expie_mood

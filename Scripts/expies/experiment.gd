@@ -8,7 +8,7 @@ var maxHunger: int = 100
 func translateBook(book):
 	openedBook = Dictionary(book)
 	## experiment *specifically* has basically no species stat mods
-	## add a + or - after the 5 for other species stat mods
+	## add a +# or -# after the 5 for other species stat mods
 	## remove this comment once other species classes are being made
 	STR = 5 + openedBook.get("pointsInSTR")
 	DEX = 5 + openedBook.get("pointsInDEX")
@@ -16,3 +16,9 @@ func translateBook(book):
 	INT = 5 + openedBook.get("pointsInINT")
 	WIS = 5 + openedBook.get("pointsInWIS")
 	CHA = 5 + openedBook.get("pointsInCHA")
+	print(openedBook)
+
+func _input(_event):
+	if Input.is_action_pressed("rightMouse"):
+		broadcast_expie_id.emit(self as Object)
+		
