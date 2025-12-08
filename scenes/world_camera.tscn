@@ -94,7 +94,7 @@ theme = ExtResource("2_yo0l3")
 theme_override_colors/font_color = Color(1, 0.57254905, 0, 1)
 theme_override_fonts/font = ExtResource("4_6rdvf")
 theme_override_font_sizes/font_size = 14
-text = "Expie1Name"
+text = "debug"
 
 [node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
 offset_top = 1.0

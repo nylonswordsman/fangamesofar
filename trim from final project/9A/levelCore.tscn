@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://bgpxod4jmw4cm"]
+[gd_scene load_steps=6 format=4 uid="uid://bgpxod4jmw4cm"]
 
 [ext_resource type="Script" uid="uid://b025p4b26l2mv" path="res://Scripts/levelCore.gd" id="1_nwkcs"]
 [ext_resource type="TileSet" uid="uid://d1rvlgl2fr445" path="res://trim from final project/9A/tileset9A.tres" id="1_t7xqr"]
 [ext_resource type="Script" uid="uid://5d05pk7ny1s6" path="res://trim from final project/9A/tml_floor.gd" id="3_1qbyj"]
+[ext_resource type="Script" uid="uid://lkvy216npcgg" path="res://trim from final project/9A/braindead_expie_1.gd" id="4_iurf8"]
 [ext_resource type="Script" uid="uid://co4ky270xdwfs" path="res://Scripts/expieNavigator.gd" id="4_x37u3"]
 
 [node name="levelCore" type="Node2D"]
@@ -18,7 +19,7 @@ occlusion_enabled = false
 script = ExtResource("3_1qbyj")
 
 [node name="braindeadExpie1" type="Node2D" parent="TML_Floor"]
-unique_name_in_owner = true
+script = ExtResource("4_iurf8")
 
 [node name="braindeadExpie2" type="Node2D" parent="TML_Floor"]
 

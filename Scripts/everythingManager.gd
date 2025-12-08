@@ -6,4 +6,5 @@ func _ready():
 	pass
 
 func _process(_delta):
+	# fps counter because why not
 	DisplayServer.window_set_title(str(title) + " | FPS: " + str(Engine.get_frames_per_second()))
