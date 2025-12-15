@@ -54,32 +54,27 @@ func _ready() -> void:
 	## multiple save support is a later thing. for now only save1 is available
 	## im lazy. cry about it lmao. ill do it after release probably
 	# load save1 resource as a variable
-	#var currentFile = load("res://data/save1.tres")
+	var currentFile = load("res://data//save1.tres")
 	# load each expie book in expieBooks and individually iterate through
-	# the results via for loop
-	#for book in currentFile.expieBooks:
-		#match book.expieSpecies:
-			#"Experi.":
-				## load Experiment class as variable
-				#var expieToLoad = load("res://Scripts/expies/experiment.tscn").instantiate()
-				## replace a braindead expie node with an Experiment
-				## replaces the braindead expie corresponding to book's expieID
-				#var braindeadToReplace = str("braindeadExpie" + str(book.expieID))
-				#add_child(expieToLoad)
-				#get_node((str("braindeadExpie") + str(braindeadToReplace)) as NodePath).replace_by(expieToLoad)
-				#expieToLoad.set_name(str("Expie" + str(braindeadToReplace)))
-				#expieToLoad.translateBook(book)
-			#"Orange":
-				##print(book)
-				#pass
-			#"Milky":
-				##print(book)
-				#pass
-			#"Hauler":
-				##print(book)
-				#pass
-			#_:
-				##print("empty")
-				#pass
-				
-				
+	# the results in a for loop.
+	for book in currentFile.expieBooks:
+		match book.expieSpecies:
+			"Experi.":
+				# load Experiment class as variable
+				var expieToLoad = load("res://Scripts/expies/experiment.tscn").instantiate()
+				# add an Experiment as child
+				add_child(expieToLoad)
+				print(type_string(typeof(book)))
+				expieToLoad.translateBook(book)
+			"Orange":
+				#print(book)
+				pass
+			"Milky":
+				#print(book)
+				pass
+			"Hauler":
+				#print(book)
+				pass
+			_:
+				#print("empty")
+				pass

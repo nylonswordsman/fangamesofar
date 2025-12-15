@@ -1,13 +1,13 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://81nbl4bvy5dw"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://81nbl4bvy5dw"]
 
 [ext_resource type="FontFile" uid="uid://bgrunmtwsc7lf" path="res://assets/UIStuff/PixelOperator.ttf" id="1_hyf1y"]
 [ext_resource type="FontFile" uid="uid://drin5xq03sp1l" path="res://assets/UIStuff/PixelOperator8.ttf" id="2_yqr00"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqr00"]
-content_margin_left = 1.0
-content_margin_top = 1.0
-content_margin_right = 1.0
-content_margin_bottom = 1.0
+content_margin_left = 5.0
+content_margin_top = 4.0
+content_margin_right = 5.0
+content_margin_bottom = 4.0
 bg_color = Color(0.38696697, 0.13778436, 0, 1)
 border_width_left = 1
 border_width_top = 1
@@ -16,8 +16,34 @@ border_width_bottom = 1
 border_color = Color(1, 0.57254905, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyf1y"]
-content_margin_left = 1.0
-content_margin_right = 1.0
+content_margin_left = 5.0
+content_margin_top = 4.0
+content_margin_right = 5.0
+content_margin_bottom = 4.0
+bg_color = Color(0.19215687, 0.07450981, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ej3f0"]
+content_margin_left = 5.0
+content_margin_top = 4.0
+content_margin_right = 5.0
+content_margin_bottom = 4.0
+bg_color = Color(0.19215687, 0.07450981, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.57254905, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1nr8"]
+content_margin_left = 5.0
+content_margin_top = 4.0
+content_margin_right = 5.0
+content_margin_bottom = 4.0
 bg_color = Color(0.19215687, 0.07450981, 0, 1)
 border_width_left = 1
 border_width_top = 1
@@ -35,6 +61,35 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(1, 0.57254905, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xh2pc"]
+bg_color = Color(1, 0.57254905, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu2b5"]
+bg_color = Color(1, 0.57254905, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3sfi"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxr72"]
+content_margin_left = 2.0
+content_margin_top = 1.0
+content_margin_right = 2.0
+content_margin_bottom = 1.0
+bg_color = Color(0.19215687, 0.07450981, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu3jk"]
+content_margin_left = 3.0
+content_margin_top = 1.0
+content_margin_right = 3.0
+content_margin_bottom = 1.0
+bg_color = Color(0.78039217, 0.29803923, 0, 1)
 
 [resource]
 default_font = ExtResource("1_hyf1y")
@@ -56,8 +111,19 @@ LineEdit/colors/selection_color = Color(0, 1, 1, 1)
 LineEdit/font_sizes/font_size = 12
 LineEdit/fonts/font = ExtResource("1_hyf1y")
 LineEdit/styles/focus = SubResource("StyleBoxFlat_hyf1y")
-LineEdit/styles/normal = SubResource("StyleBoxFlat_hyf1y")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_ej3f0")
+LogMessage/base_type = &"Label"
+LogMessage/colors/font_color = Color(1, 0.57254905, 0, 1)
+LogMessage/constants/line_spacing = 4
+LogMessage/font_sizes/font_size = 8
+LogMessage/fonts/font = ExtResource("2_yqr00")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_u1nr8")
 TabBar/styles/tab_focus = SubResource("StyleBoxFlat_ahi04")
 TabContainer/font_sizes/font_size = 14
 TabContainer/fonts/font = ExtResource("1_hyf1y")
 TabContainer/styles/panel = SubResource("StyleBoxFlat_gmodi")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_xh2pc")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_pu2b5")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_j3sfi")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_fxr72")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_uu3jk")

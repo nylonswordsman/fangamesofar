@@ -18,7 +18,7 @@ func translateBook(book):
 	CHA = 5 + openedBook.get("pointsInCHA")
 	print(openedBook)
 
-func _input(_event):
-	if Input.is_action_pressed("rightMouse"):
-		broadcast_expie_id.emit(self as Object)
-		
+#func _input(_event):
+#	if Input.is_action_pressed("rightMouse"):
+#		broadcast_expie_id.emit(self as Object)
+#		
