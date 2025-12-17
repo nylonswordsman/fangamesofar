@@ -8,6 +8,8 @@ func _process(_delta: float) -> void:
 	tML.path.clear()
 	for e in ae: ### wedom what the fucl does this mean
 		### wedm what the fuck does ae stand for
+		# variable names for the sake of naming it (garbage name)
+		# - Dj Jio
 		tML.path.append(Vector2(e*17.0)+Vector2(6.5,6.5))
 	queue_redraw()
 
