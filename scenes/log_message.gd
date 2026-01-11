@@ -5,5 +5,8 @@ func _ready():
 	#theme_type_variation = 
 	custom_minimum_size = Vector2(286,4)
 
+func add_to_log(outputText=str):
+	text += "\n>> " + outputText
+
 #why nylon
 #WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY

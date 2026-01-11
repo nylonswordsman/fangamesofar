@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmv0ky5ubsfiv"]
+[gd_scene load_steps=13 format=3 uid="uid://cmv0ky5ubsfiv"]
 
 [ext_resource type="Script" uid="uid://c1lg5mvdmxhjx" path="res://Scripts/worldcamera.gd" id="1_kjo65"]
 [ext_resource type="Theme" uid="uid://81nbl4bvy5dw" path="res://assets/UIStuff/UI.tres" id="2_yo0l3"]
-[ext_resource type="Script" uid="uid://dch3ha0bgmwnc" path="res://scenes/log_entry.gd" id="3_4lh7j"]
+[ext_resource type="Script" uid="uid://dch3ha0bgmwnc" path="res://scenes/terminal.gd" id="3_4lh7j"]
+[ext_resource type="Script" uid="uid://cj2xktuakeiye" path="res://Scripts/UI/context_menu.gd" id="3_oeg7o"]
 [ext_resource type="Script" uid="uid://68vi6lg1txb" path="res://scenes/log.gd" id="4_4lh7j"]
 [ext_resource type="FontFile" uid="uid://bgrunmtwsc7lf" path="res://assets/UIStuff/PixelOperator.ttf" id="4_6rdvf"]
 [ext_resource type="Script" uid="uid://cwh56rxltj2qt" path="res://scenes/log_message.gd" id="5_6rdvf"]
-[ext_resource type="Script" uid="uid://c2j73ayf2ubvu" path="res://Scripts/versionLabel.gd" id="5_oeg7o"]
+[ext_resource type="Script" uid="uid://c2j73ayf2ubvu" path="res://Scripts/UI/versionLabel.gd" id="5_oeg7o"]
 [ext_resource type="Script" uid="uid://ddfqma02iycmf" path="res://scenes/expiePanel.gd" id="6_r3paj"]
+[ext_resource type="Texture2D" uid="uid://duw420m15qnq7" path="res://trim from final project/stipit.png" id="9_6rdvf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2kqml"]
 font = ExtResource("4_6rdvf")
@@ -27,15 +29,41 @@ speed = 175.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="LogEntry" type="LineEdit" parent="CanvasLayer"]
+[node name="ContextMenu" type="PopupMenu" parent="CanvasLayer"]
+transparent_bg = false
+gui_embed_subwindows = true
+oversampling_override = 1.0
+title = "Context"
+transparent = false
+theme = ExtResource("2_yo0l3")
+hide_on_checkable_item_selection = false
+item_count = 4
+item_0/text = "Move Here..."
+item_0/id = 0
+item_0/disabled = true
+item_1/text = "Interact..."
+item_1/id = 1
+item_1/disabled = true
+item_2/text = "Attack..."
+item_2/id = 2
+item_2/disabled = true
+item_3/text = "Pick Up..."
+item_3/id = 3
+item_3/disabled = true
+script = ExtResource("3_oeg7o")
+
+[node name="Terminal" type="LineEdit" parent="CanvasLayer" node_paths=PackedStringArray("shortcut_context")]
 unique_name_in_owner = true
 z_index = 23
 offset_top = 627.0
 offset_right = 304.0
 offset_bottom = 648.0
 size_flags_vertical = 8
+tooltip_text = "Terminal
+Facilitates command entry"
+shortcut_context = NodePath("../LogBase")
 theme = ExtResource("2_yo0l3")
-placeholder_text = "HOLY SHIT GUYS ITS TOM HAULER"
+placeholder_text = "Enter a command..."
 emoji_menu_enabled = false
 script = ExtResource("3_4lh7j")
 
@@ -50,43 +78,41 @@ offset_bottom = -20.0
 grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 8
+tooltip_text = "Log
+Keeps track of events
+and command output"
 theme = ExtResource("2_yo0l3")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/LogBase"]
 z_index = 22
 z_as_relative = false
 layout_mode = 2
+mouse_filter = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LogBase/ScrollContainer"]
+[node name="Log" type="VBoxContainer" parent="CanvasLayer/LogBase/ScrollContainer"]
 z_index = 23
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 10
+mouse_filter = 2
+accessibility_name = "Log"
+accessibility_description = "Keeps track of events and command output"
 alignment = 2
 script = ExtResource("4_4lh7j")
 
-[node name="LogMessage" type="Label" parent="CanvasLayer/LogBase/ScrollContainer/VBoxContainer"]
+[node name="LogText" type="Label" parent="CanvasLayer/LogBase/ScrollContainer/Log"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(286, 4)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+accessibility_name = "Log"
+accessibility_description = "Keeps track of events and command output"
 theme = ExtResource("2_yo0l3")
 theme_type_variation = &"LogMessage"
 text = ">> {default debug message whos purpose is dj jio}"
-vertical_alignment = 2
-autowrap_mode = 3
-script = ExtResource("5_6rdvf")
-
-[node name="LogMessage2" type="Label" parent="CanvasLayer/LogBase/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(286, 4)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme = ExtResource("2_yo0l3")
-theme_type_variation = &"LogMessage"
-text = ">> {default debug message whos purpose is to test whether or not the text wrapping works}"
 vertical_alignment = 2
 autowrap_mode = 3
 script = ExtResource("5_6rdvf")
@@ -102,8 +128,10 @@ offset_right = 176.0
 offset_bottom = 35.0
 grow_horizontal = 2
 size_flags_horizontal = 4
-tooltip_text = "Version label which displays the build of the project you are running"
-mouse_filter = 0
+tooltip_text = "Version label
+Displays the build of the
+project you are running"
+mouse_filter = 1
 accessibility_name = "Version label"
 accessibility_description = "Displays the build of the project you are running"
 text = "if you're seeing this in-game the version label is broken"
@@ -121,32 +149,57 @@ theme = ExtResource("2_yo0l3")
 theme_override_styles/panel = SubResource("StyleBoxFlat_f3pvo")
 script = ExtResource("6_r3paj")
 
-[node name="Expie1NameLabel" type="Label" parent="CanvasLayer/expie1Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/expie1Panel"]
+layout_mode = 2
+
+[node name="Expie1PortraitPanel" type="PanelContainer" parent="CanvasLayer/expie1Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_yo0l3")
+theme_type_variation = &"PanelContainer"
+
+[node name="Expie1Portrait" type="TextureRect" parent="CanvasLayer/expie1Panel/VBoxContainer/Expie1PortraitPanel"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_6rdvf")
+
+[node name="Expie1NameLabel" type="Label" parent="CanvasLayer/expie1Panel/VBoxContainer"]
 unique_name_in_owner = true
 z_index = 22
+layout_direction = 2
 layout_mode = 2
 theme = ExtResource("2_yo0l3")
 theme_override_colors/font_color = Color(1, 0.57254905, 0, 1)
 theme_override_fonts/font = ExtResource("4_6rdvf")
 theme_override_font_sizes/font_size = 14
-text = "debug"
+text = "Expie1Name"
 
-[node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
+[node name="Expie1SpeciesLabel" type="Label" parent="CanvasLayer/expie1Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_yo0l3")
+theme_override_colors/font_color = Color(0.78039217, 0.29803923, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Voyager"
+horizontal_alignment = 2
+
+[node name="DetailsPanel" type="TabContainer" parent="CanvasLayer"]
 offset_top = 1.0
 offset_right = 304.0
 offset_bottom = 498.0
-current_tab = 1
+current_tab = 0
 
-[node name="Inspect" type="PanelContainer" parent="CanvasLayer/TabContainer"]
-visible = false
+[node name="Inspect" type="PanelContainer" parent="CanvasLayer/DetailsPanel"]
 clip_children = 1
 layout_mode = 2
 theme = ExtResource("2_yo0l3")
 metadata/_tab_index = 0
 
-[node name="Storage" type="PanelContainer" parent="CanvasLayer/TabContainer"]
+[node name="Storage" type="PanelContainer" parent="CanvasLayer/DetailsPanel"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_yo0l3")
 metadata/_tab_index = 1
 
-[connection signal="text_submitted" from="CanvasLayer/LogEntry" to="CanvasLayer/LogBase/ScrollContainer/VBoxContainer" method="_on_log_entry_text_submitted"]
+[connection signal="text_submitted" from="CanvasLayer/Terminal" to="CanvasLayer/LogBase/ScrollContainer/Log" method="_on_terminal_text_submitted"]

@@ -6,7 +6,7 @@ var targetPos = Vector2.ZERO
 
 
 func _process(delta: float) -> void:
-	
+	# very basic 'move pos' stuff
 	if Input.is_action_pressed("W"):
 		targetPos += Vector2(0,-delta*speed)
 	if Input.is_action_pressed("A"):
@@ -15,9 +15,5 @@ func _process(delta: float) -> void:
 		targetPos += Vector2(0,delta*speed)
 	if Input.is_action_pressed("D"):
 		targetPos += Vector2(delta*speed,0)
-	# very basic 'move pos' stuff
-	
-	
-	
+	# lerping to target pos
 	global_position = lerp(global_position,targetPos,5*delta) 
-	# lerping to the target pos
