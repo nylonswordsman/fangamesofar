@@ -10,6 +10,8 @@ func _on_terminal_text_submitted(new_text: String) -> void:
 			print("enter command tree here, but its not gonna be here cuz this is not how terminals work")
 		"help":
 			%LogText.add_to_log("well thats too bad lmao")
+		"?":
+			%LogText.add_to_log("well thats too bad lmao")
 		"send":
 			%LogText.add_to_log(str("sent!"))
 		#"rename":

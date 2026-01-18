@@ -7,6 +7,3 @@ func _ready():
 
 func add_to_log(outputText=str):
 	text += "\n>> " + outputText
-
-#why nylon
-#WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY

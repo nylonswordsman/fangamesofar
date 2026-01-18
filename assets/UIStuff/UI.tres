@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=21 format=3 uid="uid://81nbl4bvy5dw"]
+[gd_resource type="Theme" load_steps=22 format=3 uid="uid://81nbl4bvy5dw"]
 
 [ext_resource type="FontFile" uid="uid://bgrunmtwsc7lf" path="res://assets/UIStuff/PixelOperator.ttf" id="1_hyf1y"]
 [ext_resource type="FontFile" uid="uid://drin5xq03sp1l" path="res://assets/UIStuff/PixelOperator8.ttf" id="2_yqr00"]
@@ -16,16 +16,12 @@ border_width_bottom = 1
 border_color = Color(1, 0.57254905, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyf1y"]
-content_margin_left = 5.0
-content_margin_top = 4.0
-content_margin_right = 5.0
-content_margin_bottom = 4.0
 bg_color = Color(0.19215687, 0.07450981, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
+border_color = Color(1, 0.57254905, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ej3f0"]
 content_margin_left = 5.0
@@ -37,7 +33,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(1, 0.57254905, 0, 1)
+border_color = Color(0.78039217, 0.29803923, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u8c4"]
 bg_color = Color(0.19215687, 0.07450981, 0, 1)
@@ -81,6 +77,14 @@ expand_margin_left = 4.0
 expand_margin_top = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbjv2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bch60"]
+bg_color = Color(0.19215687, 0.07450981, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.57254905, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahi04"]
 bg_color = Color(0.2904831, 0.12526225, 0, 1)
@@ -171,6 +175,7 @@ PopupMenu/styles/panel = SubResource("StyleBoxFlat_y7n5u")
 PopupMenu/styles/separator = SubResource("StyleBoxLine_hyf1y")
 PortraitPanel/styles/panel = SubResource("StyleBoxFlat_re10e")
 TabBar/styles/button_highlight = SubResource("StyleBoxFlat_gbjv2")
+TabBar/styles/button_pressed = SubResource("StyleBoxFlat_bch60")
 TabBar/styles/tab_focus = SubResource("StyleBoxFlat_ahi04")
 TabBar/styles/tab_hovered = SubResource("StyleBoxFlat_bsuuj")
 TabBar/styles/tab_selected = SubResource("StyleBoxFlat_bsifa")

@@ -4,7 +4,6 @@ var targetPos = Vector2.ZERO
 @export var speed:float = 150.0
 # var that we keep the pos that we smoothly move to
 
-
 func _process(delta: float) -> void:
 	# very basic 'move pos' stuff
 	if Input.is_action_pressed("W"):

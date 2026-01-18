@@ -12,17 +12,16 @@ var associatedExpie = 0
 	## in this class, binding to the callable the instance
 	#Expie.broadcast_expie_id.connect(_receive_expie_id.bind())
 
-#func _receive_expie_id(emitter):
-	#
-	## this is accessing the experiment script rather than an individual id.
+func _receive_expie_id(emitter):
+	# this is accessing the experiment script rather than an individual id.
 	## i think
-	#
+	
 	## change the associated expie to the instance id of whoever emitted the
 	## broadcast signal that this panel is listening to
-	#associatedExpie = emitter
-	#print("expie panel parced entity from recieved id: " + str(associatedExpie))
-	#print(associatedExpie.openedBook.expieID, associatedExpie.openedBook.expieName)
-	#%Expie1NameLabel.set_text(associatedExpie.openedBook.expieName)
+	associatedExpie = emitter
+	print("expie panel parced entity from recieved id: " + str(associatedExpie))
+	print(associatedExpie.openedBook.expieID, associatedExpie.openedBook.expieName)
+	%Expie1NameLabel.set_text(associatedExpie.openedBook.expieName)
 
 #func _change_expie_name
 #func _change_expie_mood
