@@ -22,3 +22,7 @@ func translateBook(book):
 #	if Input.is_action_pressed("rightMouse"):
 #		broadcast_expie_id.emit(self as Object)
 #		
+
+
+func _on_area_2d_input_event():
+	get_parent().get_parent().get_parent().selectedEntity = self

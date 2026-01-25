@@ -3,6 +3,8 @@ extends Node2D
 @export var tML: TileMapLayer
 
 func _process(_delta: float) -> void:
+	# the below line is really annoying it spams errors every milisecond when your mouse
+	# is out of bounds and floods the debugger
 	var wholePath = tML.aStarGrid.get_id_path(Vector2i(0,0),Vector2i(get_global_mouse_position()/17.0))
 	tML.path.clear()
 	for point in wholePath:

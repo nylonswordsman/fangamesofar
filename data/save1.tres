@@ -4,3 +4,21 @@
 
 [resource]
 script = ExtResource("1_7itov")
+saveInfo = {
+"1BUnlocked": false,
+"2BUnlocked": false,
+"3BUnlocked": false,
+"4BUnlocked": false,
+"5BUnlocked": false,
+"6BUnlocked": false,
+"7BUnlocked": false,
+"8BUnlocked": false,
+"albinoUnlocked": false,
+"baronUnlocked": false,
+"bloodfiendUnlocked": false,
+"crystalUnlocked": false,
+"haulerUnlocked": false,
+"leapyUnlocked": false,
+"nodeToLoad": 1,
+"rainyUnlocked": false
+}

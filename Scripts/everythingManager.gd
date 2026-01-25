@@ -1,9 +1,8 @@
 extends Node2D
 
 var title = ProjectSettings.get_setting("application/config/name")
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
+@export var currentFloor = 17
+@export var selectedEntity = Node2D
 
 func _process(_delta):
 	# fps counter because why not

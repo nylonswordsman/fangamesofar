@@ -5,6 +5,8 @@ var aStarGrid:AStarGrid2D
 var size = self.get_used_rect().size
 var path:Array[Vector2] = []
 
+var selectedEntity: Node2D
+
 
 ### note: im prolly thinking later we have this one do the worldgen stuff too
 ### off a set of parameters based on what floor the player's on. that'll 
@@ -49,8 +51,6 @@ func _ready() -> void:
 		if get_cell_source_id(tile)==1:aStarGrid.set_point_solid(tile,true)
 	# effectively just calls _draw() in an unintrusive way
 
-
-
 	## multiple save support is a later thing. for now only save1 is available
 	## im lazy. cry about it lmao. ill do it after release probably
 	# load save1 resource as a variable
@@ -78,3 +78,8 @@ func _ready() -> void:
 			_:
 				#print("empty")
 				pass
+
+#func _unhandled_input(event: InputEvent) -> void:
+#	if event.is_action_released("leftMouse"):
+#		get_global_mouse_position()
+#		pass

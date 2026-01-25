@@ -22,7 +22,12 @@ config/icon="uid://dmrs1iswlgkw"
 
 [autoload]
 
-Expie="*res://Scripts/expies/expie.gd"
+Globals="*res://Scripts/globals.gd"
+ExpieGlobal="*res://Scripts/expies/expie.gd"
+
+[debug]
+
+gdscript/warnings/unused_variable=0
 
 [display]
 

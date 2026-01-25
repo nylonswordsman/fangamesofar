@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://du2abpmf12lg"]
+[gd_scene load_steps=4 format=3 uid="uid://du2abpmf12lg"]
 
 [ext_resource type="Script" uid="uid://2g4jaeubx15n" path="res://Scripts/expies/experiment.gd" id="1_j2iio"]
 [ext_resource type="Texture2D" uid="uid://bhuhqeeep05g2" path="res://trim from final project/icon.svg" id="2_hf6ex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qk1w8"]
+size = Vector2(17, 17)
 
 [node name="Experiment" type="Node2D"]
 z_index = 9
@@ -10,5 +13,12 @@ script = ExtResource("1_j2iio")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 12
 position = Vector2(9.53674e-07, 9.53674e-07)
-scale = Vector2(0.1875, 0.1875)
+scale = Vector2(0.133, 0.133)
 texture = ExtResource("2_hf6ex")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_qk1w8")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

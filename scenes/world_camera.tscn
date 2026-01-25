@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmv0ky5ubsfiv"]
+[gd_scene load_steps=14 format=3 uid="uid://cmv0ky5ubsfiv"]
 
 [ext_resource type="Script" uid="uid://c1lg5mvdmxhjx" path="res://Scripts/worldcamera.gd" id="1_kjo65"]
 [ext_resource type="Theme" uid="uid://81nbl4bvy5dw" path="res://assets/UIStuff/UI.tres" id="2_yo0l3"]
-[ext_resource type="Script" uid="uid://dch3ha0bgmwnc" path="res://scenes/terminal.gd" id="3_4lh7j"]
+[ext_resource type="Script" uid="uid://dch3ha0bgmwnc" path="res://Scripts/UI/terminal.gd" id="3_4lh7j"]
 [ext_resource type="Script" uid="uid://cj2xktuakeiye" path="res://Scripts/UI/context_menu.gd" id="3_oeg7o"]
-[ext_resource type="Script" uid="uid://68vi6lg1txb" path="res://scenes/log.gd" id="4_4lh7j"]
+[ext_resource type="Script" uid="uid://68vi6lg1txb" path="res://Scripts/UI/log.gd" id="4_4lh7j"]
 [ext_resource type="FontFile" uid="uid://bgrunmtwsc7lf" path="res://assets/UIStuff/PixelOperator.ttf" id="4_6rdvf"]
-[ext_resource type="Script" uid="uid://cwh56rxltj2qt" path="res://scenes/log_message.gd" id="5_6rdvf"]
+[ext_resource type="Script" uid="uid://cwh56rxltj2qt" path="res://Scripts/UI/log_message.gd" id="5_6rdvf"]
 [ext_resource type="Script" uid="uid://c2j73ayf2ubvu" path="res://Scripts/UI/versionLabel.gd" id="5_oeg7o"]
-[ext_resource type="Script" uid="uid://ddfqma02iycmf" path="res://scenes/expiePanel.gd" id="6_r3paj"]
+[ext_resource type="Script" uid="uid://ddfqma02iycmf" path="res://Scripts/UI/expiePanel.gd" id="6_r3paj"]
 [ext_resource type="Texture2D" uid="uid://duw420m15qnq7" path="res://trim from final project/stipit.png" id="9_6rdvf"]
+[ext_resource type="Script" uid="uid://c2sj6hq5cde0o" path="res://scripts/ui/inspect_body.gd" id="10_r3paj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2kqml"]
 font = ExtResource("4_6rdvf")
@@ -29,28 +30,6 @@ speed = 175.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 26
-
-[node name="ContextMenu" type="PopupMenu" parent="CanvasLayer"]
-unique_name_in_owner = true
-editor_description = "BULLSHIT"
-transparent_bg = false
-gui_embed_subwindows = true
-oversampling_override = 1.0
-title = "Context"
-always_on_top = true
-transparent = false
-theme = ExtResource("2_yo0l3")
-hide_on_checkable_item_selection = false
-item_count = 4
-item_0/text = "Move Here..."
-item_0/id = 0
-item_1/text = "Interact..."
-item_1/id = 1
-item_2/text = "Attack..."
-item_2/id = 2
-item_3/text = "Pick Up..."
-item_3/id = 3
-script = ExtResource("3_oeg7o")
 
 [node name="Terminal" type="LineEdit" parent="CanvasLayer" node_paths=PackedStringArray("shortcut_context")]
 unique_name_in_owner = true
@@ -92,7 +71,6 @@ horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
 [node name="Log" type="VBoxContainer" parent="CanvasLayer/LogBase/ScrollContainer"]
-visible = false
 z_index = 23
 layout_mode = 2
 size_flags_horizontal = 0
@@ -190,6 +168,7 @@ horizontal_alignment = 2
 offset_top = 1.0
 offset_right = 304.0
 offset_bottom = 498.0
+theme = ExtResource("2_yo0l3")
 current_tab = 0
 
 [node name="Inspect" type="PanelContainer" parent="CanvasLayer/DetailsPanel"]
@@ -198,10 +177,55 @@ layout_mode = 2
 theme = ExtResource("2_yo0l3")
 metadata/_tab_index = 0
 
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DetailsPanel/Inspect"]
+layout_mode = 2
+theme = ExtResource("2_yo0l3")
+
+[node name="SelectedEntityLabel" type="Label" parent="CanvasLayer/DetailsPanel/Inspect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_yo0l3")
+theme_override_colors/font_color = Color(1, 0.57254905, 0, 1)
+text = "| Unresolved Queries |"
+horizontal_alignment = 1
+
+[node name="InspectBody" type="RichTextLabel" parent="CanvasLayer/DetailsPanel/Inspect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_yo0l3")
+text = "Query: What is my purpose?"
+script = ExtResource("10_r3paj")
+
 [node name="Storage" type="PanelContainer" parent="CanvasLayer/DetailsPanel"]
 visible = false
 layout_mode = 2
 theme = ExtResource("2_yo0l3")
 metadata/_tab_index = 1
+
+[node name="Status" type="PanelContainer" parent="CanvasLayer/DetailsPanel"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_yo0l3")
+metadata/_tab_index = 2
+
+[node name="ContextMenu" type="PopupMenu" parent="."]
+unique_name_in_owner = true
+editor_description = "BULLSHIT"
+transparent_bg = false
+gui_embed_subwindows = true
+oversampling_override = 1.0
+title = "Context"
+always_on_top = true
+transparent = false
+theme = ExtResource("2_yo0l3")
+hide_on_checkable_item_selection = false
+item_count = 4
+item_0/text = "Move Here..."
+item_0/id = 0
+item_1/text = "Interact..."
+item_1/id = 1
+item_2/text = "Attack..."
+item_2/id = 2
+item_3/text = "Pick Up..."
+item_3/id = 3
+script = ExtResource("3_oeg7o")
 
 [connection signal="text_submitted" from="CanvasLayer/Terminal" to="CanvasLayer/LogBase/ScrollContainer/Log" method="_on_terminal_text_submitted"]

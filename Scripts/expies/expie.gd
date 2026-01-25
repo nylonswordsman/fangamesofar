@@ -54,13 +54,15 @@ func _ready():
 #		broadcast_expie_id.emit(get_instance_id())
 		pass
 
-func _input(_event):
-	if Input.is_action_just_pressed("QuickSelectExpie1"):
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_released("QuickSelectExpie1"):
 		selected = not selected
-	if Input.is_action_pressed("P") and selected == true:
+		print("selected: " + str(selected))
+	if Input.is_action_pressed("P") and selected:
 		for point in tML.path:
-			pass
-		pass
+			print(point)
+	elif Input.is_action_pressed("P") and selected != true:
+		print("expie wasnt selected")
 #region debug
 #	if Input.is_action_pressed("rightMouse"):
 #		broadcast_expie_id.emit(self as Object)
