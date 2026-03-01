@@ -1,20 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://beqeulrol1eji"]
+[gd_scene format=3 uid="uid://beqeulrol1eji"]
 
 [ext_resource type="Script" uid="uid://cdp6544mfx05x" path="res://Scripts/everythingManager.gd" id="1_1trim"]
 [ext_resource type="PackedScene" uid="uid://bgpxod4jmw4cm" path="res://trim from final project/9A/levelCore.tscn" id="2_oon43"]
 [ext_resource type="PackedScene" uid="uid://cmv0ky5ubsfiv" path="res://scenes/world_camera.tscn" id="3_l6lpc"]
 [ext_resource type="Script" uid="uid://cadv3vrb7tgra" path="res://Scripts/UI/inspect.gd" id="4_665f2"]
 
-[node name="EverythingManager" type="Node2D"]
+[node name="EverythingManager" type="Node2D" unique_id=858581634]
 script = ExtResource("1_1trim")
 
-[node name="9ACore" parent="." instance=ExtResource("2_oon43")]
+[node name="9ACore" parent="." unique_id=1966632781 instance=ExtResource("2_oon43")]
 unique_name_in_owner = true
 
-[node name="WorldCamera" parent="." instance=ExtResource("3_l6lpc")]
+[node name="WorldCamera" parent="." unique_id=492802570 instance=ExtResource("3_l6lpc")]
 
-[node name="Inspect" parent="WorldCamera/CanvasLayer/DetailsPanel" index="1"]
+[node name="Inspect" parent="WorldCamera/CanvasLayer/DetailsPanel" parent_id_path=PackedInt32Array(492802570, 1922047852) index="1" unique_id=848287487]
 script = ExtResource("4_665f2")
+
+[node name="InspectBody" parent="WorldCamera/CanvasLayer/DetailsPanel/Inspect/VBoxContainer" parent_id_path=PackedInt32Array(492802570, 475273033) index="1" unique_id=1430079372]
+bbcode_enabled = true
+text = ""
 
 [connection signal="ready" from="WorldCamera/CanvasLayer/expie1Panel" to="WorldCamera" method="_on_expie_1_panel_ready"]
 

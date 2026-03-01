@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmv0ky5ubsfiv"]
+[gd_scene format=3 uid="uid://cmv0ky5ubsfiv"]
 
 [ext_resource type="Script" uid="uid://c1lg5mvdmxhjx" path="res://Scripts/worldcamera.gd" id="1_kjo65"]
 [ext_resource type="Theme" uid="uid://81nbl4bvy5dw" path="res://assets/UIStuff/UI.tres" id="2_yo0l3"]
@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://c2j73ayf2ubvu" path="res://Scripts/UI/versionLabel.gd" id="5_oeg7o"]
 [ext_resource type="Script" uid="uid://ddfqma02iycmf" path="res://Scripts/UI/expiePanel.gd" id="6_r3paj"]
 [ext_resource type="Texture2D" uid="uid://duw420m15qnq7" path="res://trim from final project/stipit.png" id="9_6rdvf"]
-[ext_resource type="Script" uid="uid://c2sj6hq5cde0o" path="res://scripts/ui/inspect_body.gd" id="10_r3paj"]
+[ext_resource type="Script" uid="uid://c2sj6hq5cde0o" path="res://Scripts/UI/inspect_body.gd" id="10_r3paj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2kqml"]
 font = ExtResource("4_6rdvf")
@@ -24,14 +24,14 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(1, 0.57254905, 0, 1)
 
-[node name="WorldCamera" type="Camera2D"]
+[node name="WorldCamera" type="Camera2D" unique_id=1842350593]
 script = ExtResource("1_kjo65")
 speed = 175.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2050001323]
 layer = 26
 
-[node name="Terminal" type="LineEdit" parent="CanvasLayer" node_paths=PackedStringArray("shortcut_context")]
+[node name="Terminal" type="LineEdit" parent="CanvasLayer" unique_id=952047039 node_paths=PackedStringArray("shortcut_context")]
 unique_name_in_owner = true
 z_index = 23
 offset_top = 627.0
@@ -46,7 +46,7 @@ placeholder_text = "Enter a command..."
 emoji_menu_enabled = false
 script = ExtResource("3_4lh7j")
 
-[node name="LogBase" type="PanelContainer" parent="CanvasLayer"]
+[node name="LogBase" type="PanelContainer" parent="CanvasLayer" unique_id=28857264]
 z_index = 20
 anchors_preset = 2
 anchor_top = 1.0
@@ -62,7 +62,7 @@ Keeps track of events
 and command output"
 theme = ExtResource("2_yo0l3")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/LogBase"]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/LogBase" unique_id=473545638]
 z_index = 22
 z_as_relative = false
 layout_mode = 2
@@ -70,7 +70,7 @@ mouse_filter = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="Log" type="VBoxContainer" parent="CanvasLayer/LogBase/ScrollContainer"]
+[node name="Log" type="VBoxContainer" parent="CanvasLayer/LogBase/ScrollContainer" unique_id=1142617812]
 z_index = 23
 layout_mode = 2
 size_flags_horizontal = 0
@@ -81,7 +81,7 @@ accessibility_description = "Keeps track of events and command output"
 alignment = 2
 script = ExtResource("4_4lh7j")
 
-[node name="LogText" type="Label" parent="CanvasLayer/LogBase/ScrollContainer/Log"]
+[node name="LogText" type="Label" parent="CanvasLayer/LogBase/ScrollContainer/Log" unique_id=1593699589]
 unique_name_in_owner = true
 process_mode = 3
 custom_minimum_size = Vector2(286, 4)
@@ -97,7 +97,7 @@ vertical_alignment = 2
 autowrap_mode = 3
 script = ExtResource("5_6rdvf")
 
-[node name="versionLabel" type="Label" parent="CanvasLayer"]
+[node name="versionLabel" type="Label" parent="CanvasLayer" unique_id=379294926]
 self_modulate = Color(1, 1, 1, 0.68235296)
 z_index = 20
 anchors_preset = 5
@@ -119,7 +119,7 @@ label_settings = SubResource("LabelSettings_2kqml")
 horizontal_alignment = 1
 script = ExtResource("5_oeg7o")
 
-[node name="expie1Panel" type="PanelContainer" parent="CanvasLayer"]
+[node name="expie1Panel" type="PanelContainer" parent="CanvasLayer" unique_id=1814666264]
 z_index = 20
 offset_left = 303.0
 offset_top = 497.0
@@ -129,84 +129,73 @@ theme = ExtResource("2_yo0l3")
 theme_override_styles/panel = SubResource("StyleBoxFlat_f3pvo")
 script = ExtResource("6_r3paj")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/expie1Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/expie1Panel" unique_id=1933345353]
 layout_mode = 2
 
-[node name="Expie1PortraitPanel" type="PanelContainer" parent="CanvasLayer/expie1Panel/VBoxContainer"]
+[node name="Expie1PortraitPanel" type="PanelContainer" parent="CanvasLayer/expie1Panel/VBoxContainer" unique_id=728844658]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("2_yo0l3")
 theme_type_variation = &"PanelContainer"
 
-[node name="Expie1Portrait" type="TextureRect" parent="CanvasLayer/expie1Panel/VBoxContainer/Expie1PortraitPanel"]
+[node name="Expie1Portrait" type="TextureRect" parent="CanvasLayer/expie1Panel/VBoxContainer/Expie1PortraitPanel" unique_id=1150593808]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("9_6rdvf")
 
-[node name="Expie1NameLabel" type="Label" parent="CanvasLayer/expie1Panel/VBoxContainer"]
-unique_name_in_owner = true
-z_index = 22
-layout_direction = 2
+[node name="Expie1Label" type="RichTextLabel" parent="CanvasLayer/expie1Panel/VBoxContainer" unique_id=737745262]
 layout_mode = 2
 theme = ExtResource("2_yo0l3")
-theme_override_colors/font_color = Color(1, 0.57254905, 0, 1)
-theme_override_fonts/font = ExtResource("4_6rdvf")
-theme_override_font_sizes/font_size = 14
-text = "Expie1Name"
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[color=ff9200]Expie1Name[br][right][color=c74c00]Voyager"
+fit_content = true
 
-[node name="Expie1SpeciesLabel" type="Label" parent="CanvasLayer/expie1Panel/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_yo0l3")
-theme_override_colors/font_color = Color(0.78039217, 0.29803923, 0, 1)
-theme_override_font_sizes/font_size = 14
-text = "Voyager"
-horizontal_alignment = 2
-
-[node name="DetailsPanel" type="TabContainer" parent="CanvasLayer"]
+[node name="DetailsPanel" type="TabContainer" parent="CanvasLayer" unique_id=1922047852]
 offset_top = 1.0
 offset_right = 304.0
 offset_bottom = 498.0
 theme = ExtResource("2_yo0l3")
 current_tab = 0
 
-[node name="Inspect" type="PanelContainer" parent="CanvasLayer/DetailsPanel"]
+[node name="Inspect" type="PanelContainer" parent="CanvasLayer/DetailsPanel" unique_id=848287487]
 clip_children = 1
 layout_mode = 2
 theme = ExtResource("2_yo0l3")
 metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DetailsPanel/Inspect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DetailsPanel/Inspect" unique_id=475273033]
 layout_mode = 2
 theme = ExtResource("2_yo0l3")
 
-[node name="SelectedEntityLabel" type="Label" parent="CanvasLayer/DetailsPanel/Inspect/VBoxContainer"]
+[node name="SelectedEntityLabel" type="Label" parent="CanvasLayer/DetailsPanel/Inspect/VBoxContainer" unique_id=730612181]
 layout_mode = 2
 theme = ExtResource("2_yo0l3")
 theme_override_colors/font_color = Color(1, 0.57254905, 0, 1)
 text = "| Unresolved Queries |"
 horizontal_alignment = 1
 
-[node name="InspectBody" type="RichTextLabel" parent="CanvasLayer/DetailsPanel/Inspect/VBoxContainer"]
+[node name="InspectBody" type="RichTextLabel" parent="CanvasLayer/DetailsPanel/Inspect/VBoxContainer" unique_id=1430079372]
 layout_mode = 2
 theme = ExtResource("2_yo0l3")
 text = "Query: What is my purpose?"
 script = ExtResource("10_r3paj")
 
-[node name="Storage" type="PanelContainer" parent="CanvasLayer/DetailsPanel"]
+[node name="Storage" type="PanelContainer" parent="CanvasLayer/DetailsPanel" unique_id=1714278223]
 visible = false
 layout_mode = 2
 theme = ExtResource("2_yo0l3")
 metadata/_tab_index = 1
 
-[node name="Status" type="PanelContainer" parent="CanvasLayer/DetailsPanel"]
+[node name="Status" type="PanelContainer" parent="CanvasLayer/DetailsPanel" unique_id=1858229912]
 visible = false
 layout_mode = 2
 theme = ExtResource("2_yo0l3")
 metadata/_tab_index = 2
 
-[node name="ContextMenu" type="PopupMenu" parent="."]
+[node name="ContextMenu" type="PopupMenu" parent="." unique_id=41256499]
 unique_name_in_owner = true
 editor_description = "BULLSHIT"
 transparent_bg = false

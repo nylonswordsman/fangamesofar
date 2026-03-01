@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=22 format=3 uid="uid://81nbl4bvy5dw"]
+[gd_resource type="Theme" format=3 uid="uid://81nbl4bvy5dw"]
 
 [ext_resource type="FontFile" uid="uid://bgrunmtwsc7lf" path="res://assets/UIStuff/PixelOperator.ttf" id="1_hyf1y"]
 [ext_resource type="FontFile" uid="uid://drin5xq03sp1l" path="res://assets/UIStuff/PixelOperator8.ttf" id="2_yqr00"]
