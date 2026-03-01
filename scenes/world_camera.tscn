@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cwh56rxltj2qt" path="res://Scripts/UI/log_message.gd" id="5_6rdvf"]
 [ext_resource type="Script" uid="uid://c2j73ayf2ubvu" path="res://Scripts/UI/versionLabel.gd" id="5_oeg7o"]
 [ext_resource type="Script" uid="uid://ddfqma02iycmf" path="res://Scripts/UI/expiePanel.gd" id="6_r3paj"]
-[ext_resource type="Texture2D" uid="uid://duw420m15qnq7" path="res://trim from final project/stipit.png" id="9_6rdvf"]
+[ext_resource type="Texture2D" uid="uid://cmysp1rpojswq" path="res://trim from final project/Untitled.png" id="9_r3paj"]
 [ext_resource type="Script" uid="uid://c2sj6hq5cde0o" path="res://Scripts/UI/inspect_body.gd" id="10_r3paj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2kqml"]
@@ -25,6 +25,7 @@ border_width_bottom = 1
 border_color = Color(1, 0.57254905, 0, 1)
 
 [node name="WorldCamera" type="Camera2D" unique_id=1842350593]
+zoom = Vector2(1.2, 1.2)
 script = ExtResource("1_kjo65")
 speed = 175.0
 
@@ -81,7 +82,7 @@ accessibility_description = "Keeps track of events and command output"
 alignment = 2
 script = ExtResource("4_4lh7j")
 
-[node name="LogText" type="Label" parent="CanvasLayer/LogBase/ScrollContainer/Log" unique_id=1593699589]
+[node name="LogText" type="RichTextLabel" parent="CanvasLayer/LogBase/ScrollContainer/Log" unique_id=19588735]
 unique_name_in_owner = true
 process_mode = 3
 custom_minimum_size = Vector2(286, 4)
@@ -91,10 +92,14 @@ size_flags_vertical = 8
 accessibility_name = "Log"
 accessibility_description = "Keeps track of events and command output"
 theme = ExtResource("2_yo0l3")
-theme_type_variation = &"LogMessage"
+theme_override_colors/default_color = Color(1, 0.57254905, 0, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_constants/line_separation = -2
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
 text = ">> {default debug message whos purpose is dj jio}"
+fit_content = true
 vertical_alignment = 2
-autowrap_mode = 3
 script = ExtResource("5_6rdvf")
 
 [node name="versionLabel" type="Label" parent="CanvasLayer" unique_id=379294926]
@@ -143,14 +148,14 @@ theme_type_variation = &"PanelContainer"
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("9_6rdvf")
+texture = ExtResource("9_r3paj")
 
 [node name="Expie1Label" type="RichTextLabel" parent="CanvasLayer/expie1Panel/VBoxContainer" unique_id=737745262]
 layout_mode = 2
 theme = ExtResource("2_yo0l3")
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "[color=ff9200]Expie1Name[br][right][color=c74c00]Voyager"
+text = "[color=ff9200]Expie1Name[i][right][color=c74c00]Voyager"
 fit_content = true
 
 [node name="DetailsPanel" type="TabContainer" parent="CanvasLayer" unique_id=1922047852]
@@ -183,13 +188,13 @@ theme = ExtResource("2_yo0l3")
 text = "Query: What is my purpose?"
 script = ExtResource("10_r3paj")
 
-[node name="Storage" type="PanelContainer" parent="CanvasLayer/DetailsPanel" unique_id=1714278223]
+[node name="Status" type="PanelContainer" parent="CanvasLayer/DetailsPanel" unique_id=1858229912]
 visible = false
 layout_mode = 2
 theme = ExtResource("2_yo0l3")
 metadata/_tab_index = 1
 
-[node name="Status" type="PanelContainer" parent="CanvasLayer/DetailsPanel" unique_id=1858229912]
+[node name="Storage" type="PanelContainer" parent="CanvasLayer/DetailsPanel" unique_id=1714278223]
 visible = false
 layout_mode = 2
 theme = ExtResource("2_yo0l3")

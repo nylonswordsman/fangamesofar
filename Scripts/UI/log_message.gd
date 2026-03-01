@@ -1,4 +1,4 @@
-extends Label
+extends RichTextLabel
 class_name log_message
 
 func _ready():
@@ -6,4 +6,4 @@ func _ready():
 	custom_minimum_size = Vector2(286,4)
 
 func add_to_log(outputText=str):
-	text += "\n>> " + outputText
+	text += "[br]>> " + outputText

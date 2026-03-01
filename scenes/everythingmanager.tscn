@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bgpxod4jmw4cm" path="res://trim from final project/9A/levelCore.tscn" id="2_oon43"]
 [ext_resource type="PackedScene" uid="uid://cmv0ky5ubsfiv" path="res://scenes/world_camera.tscn" id="3_l6lpc"]
 [ext_resource type="Script" uid="uid://cadv3vrb7tgra" path="res://Scripts/UI/inspect.gd" id="4_665f2"]
+[ext_resource type="Theme" uid="uid://81nbl4bvy5dw" path="res://assets/UIStuff/UI.tres" id="4_whfbe"]
 
 [node name="EverythingManager" type="Node2D" unique_id=858581634]
 script = ExtResource("1_1trim")
@@ -13,12 +14,18 @@ unique_name_in_owner = true
 
 [node name="WorldCamera" parent="." unique_id=492802570 instance=ExtResource("3_l6lpc")]
 
+[node name="Expie1Portrait" parent="WorldCamera/CanvasLayer/expie1Panel/VBoxContainer/Expie1PortraitPanel" parent_id_path=PackedInt32Array(492802570, 728844658) index="0" unique_id=1150593808]
+theme = ExtResource("4_whfbe")
+
 [node name="Inspect" parent="WorldCamera/CanvasLayer/DetailsPanel" parent_id_path=PackedInt32Array(492802570, 1922047852) index="1" unique_id=848287487]
 script = ExtResource("4_665f2")
 
 [node name="InspectBody" parent="WorldCamera/CanvasLayer/DetailsPanel/Inspect/VBoxContainer" parent_id_path=PackedInt32Array(492802570, 475273033) index="1" unique_id=1430079372]
 bbcode_enabled = true
 text = ""
+
+[node name="ContextMenu" parent="WorldCamera" index="1" unique_id=41256499]
+size = Vector2i(129, 116)
 
 [connection signal="ready" from="WorldCamera/CanvasLayer/expie1Panel" to="WorldCamera" method="_on_expie_1_panel_ready"]
 
