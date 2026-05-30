@@ -24,6 +24,10 @@ run/max_fps=60
 boot_splash/use_filter=false
 config/icon="uid://dmrs1iswlgkw"
 
+[audio]
+
+buses/default_bus_layout="uid://cdjm5hcem3hhu"
+
 [autoload]
 
 Globals="*res://Scripts/globals.gd"

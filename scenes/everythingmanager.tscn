@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cmv0ky5ubsfiv" path="res://scenes/world_camera.tscn" id="3_l6lpc"]
 [ext_resource type="Script" uid="uid://cadv3vrb7tgra" path="res://Scripts/UI/inspect.gd" id="4_665f2"]
 [ext_resource type="Theme" uid="uid://81nbl4bvy5dw" path="res://assets/UIStuff/UI.tres" id="4_whfbe"]
+[ext_resource type="Script" uid="uid://54nnaw4pfuw3" path="res://Scripts/music_manager.gd" id="6_fy33f"]
 
 [node name="EverythingManager" type="Node2D" unique_id=858581634]
 script = ExtResource("1_1trim")
@@ -26,6 +27,27 @@ text = ""
 
 [node name="ContextMenu" parent="WorldCamera" index="1" unique_id=41256499]
 size = Vector2i(129, 116)
+
+[node name="MusicManager" type="Node2D" parent="." unique_id=538212781 node_paths=PackedStringArray("players")]
+position = Vector2(214, -39)
+script = ExtResource("6_fy33f")
+players = [NodePath("Instance1Normal"), NodePath("Instance1Combat"), NodePath("Instance2Normal"), NodePath("Instance2Combat")]
+Layer = 4
+Combat = true
+Paused = true
+
+[node name="Instance1Normal" type="AudioStreamPlayer" parent="MusicManager" unique_id=897403576]
+bus = &"Music"
+
+[node name="Instance1Combat" type="AudioStreamPlayer" parent="MusicManager" unique_id=1880194881]
+volume_db = -80.0
+bus = &"Music"
+
+[node name="Instance2Normal" type="AudioStreamPlayer" parent="MusicManager" unique_id=1247002806]
+bus = &"Music"
+
+[node name="Instance2Combat" type="AudioStreamPlayer" parent="MusicManager" unique_id=1862630743]
+bus = &"Music"
 
 [connection signal="ready" from="WorldCamera/CanvasLayer/expie1Panel" to="WorldCamera" method="_on_expie_1_panel_ready"]
 
