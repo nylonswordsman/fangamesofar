@@ -15,7 +15,7 @@ unique_name_in_owner = true
 
 [node name="WorldCamera" parent="." unique_id=492802570 instance=ExtResource("3_l6lpc")]
 
-[node name="Expie1Portrait" parent="WorldCamera/CanvasLayer/expie1Panel/VBoxContainer/Expie1PortraitPanel" parent_id_path=PackedInt32Array(492802570, 728844658) index="0" unique_id=1150593808]
+[node name="Expie1Portrait" parent="WorldCamera/CanvasLayer/expie1Panel/VBoxContainer/HBoxContainer/Expie1PortraitPanel" parent_id_path=PackedInt32Array(492802570, 728844658) index="0" unique_id=1150593808]
 theme = ExtResource("4_whfbe")
 
 [node name="Inspect" parent="WorldCamera/CanvasLayer/DetailsPanel" parent_id_path=PackedInt32Array(492802570, 1922047852) index="1" unique_id=848287487]
@@ -33,8 +33,6 @@ position = Vector2(214, -39)
 script = ExtResource("6_fy33f")
 players = [NodePath("Instance1Normal"), NodePath("Instance1Combat"), NodePath("Instance2Normal"), NodePath("Instance2Combat")]
 Layer = 4
-Combat = true
-Paused = true
 
 [node name="Instance1Normal" type="AudioStreamPlayer" parent="MusicManager" unique_id=897403576]
 bus = &"Music"

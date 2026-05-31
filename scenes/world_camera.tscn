@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cwh56rxltj2qt" path="res://Scripts/UI/log_message.gd" id="5_6rdvf"]
 [ext_resource type="Script" uid="uid://c2j73ayf2ubvu" path="res://Scripts/UI/versionLabel.gd" id="5_oeg7o"]
 [ext_resource type="Script" uid="uid://ddfqma02iycmf" path="res://Scripts/UI/expiePanel.gd" id="6_r3paj"]
-[ext_resource type="Texture2D" uid="uid://cmysp1rpojswq" path="res://trim from final project/Untitled.png" id="9_r3paj"]
+[ext_resource type="Texture2D" uid="uid://cu4tpeljftve1" path="res://assets/Portraits/sad_curious.png" id="9_r3paj"]
 [ext_resource type="Script" uid="uid://c2sj6hq5cde0o" path="res://Scripts/UI/inspect_body.gd" id="10_r3paj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2kqml"]
@@ -137,18 +137,23 @@ script = ExtResource("6_r3paj")
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/expie1Panel" unique_id=1933345353]
 layout_mode = 2
 
-[node name="Expie1PortraitPanel" type="PanelContainer" parent="CanvasLayer/expie1Panel/VBoxContainer" unique_id=728844658]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/expie1Panel/VBoxContainer" unique_id=212678273]
+layout_mode = 2
+
+[node name="Expie1PortraitPanel" type="PanelContainer" parent="CanvasLayer/expie1Panel/VBoxContainer/HBoxContainer" unique_id=728844658]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("2_yo0l3")
 theme_type_variation = &"PanelContainer"
 
-[node name="Expie1Portrait" type="TextureRect" parent="CanvasLayer/expie1Panel/VBoxContainer/Expie1PortraitPanel" unique_id=1150593808]
+[node name="Expie1Portrait" type="TextureRect" parent="CanvasLayer/expie1Panel/VBoxContainer/HBoxContainer/Expie1PortraitPanel" unique_id=1150593808]
+custom_minimum_size = Vector2(45, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("9_r3paj")
+expand_mode = 1
 
 [node name="Expie1Label" type="RichTextLabel" parent="CanvasLayer/expie1Panel/VBoxContainer" unique_id=737745262]
 layout_mode = 2
