@@ -6,6 +6,12 @@
 [ext_resource type="Script" uid="uid://cadv3vrb7tgra" path="res://Scripts/UI/inspect.gd" id="4_665f2"]
 [ext_resource type="Theme" uid="uid://81nbl4bvy5dw" path="res://assets/UIStuff/UI.tres" id="4_whfbe"]
 [ext_resource type="Script" uid="uid://54nnaw4pfuw3" path="res://Scripts/music_manager.gd" id="6_fy33f"]
+[ext_resource type="Script" uid="uid://btmcnuuar3t1a" path="res://scenes/spread_visuals.gd" id="7_f3pvo"]
+
+[sub_resource type="Curve" id="Curve_f3pvo"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0.08988762), 0.0, 1.785607, 0, 0, Vector2(1, 2), 3.1698995, 0.0, 0, 0]
+point_count = 2
 
 [node name="EverythingManager" type="Node2D" unique_id=858581634]
 script = ExtResource("1_1trim")
@@ -32,7 +38,9 @@ size = Vector2i(129, 116)
 position = Vector2(214, -39)
 script = ExtResource("6_fy33f")
 players = [NodePath("Instance1Normal"), NodePath("Instance1Combat"), NodePath("Instance2Normal"), NodePath("Instance2Combat")]
-Layer = 4
+Layer = 3
+Combat = true
+Paused = true
 
 [node name="Instance1Normal" type="AudioStreamPlayer" parent="MusicManager" unique_id=897403576]
 bus = &"Music"
@@ -46,6 +54,14 @@ bus = &"Music"
 
 [node name="Instance2Combat" type="AudioStreamPlayer" parent="MusicManager" unique_id=1862630743]
 bus = &"Music"
+
+[node name="SpreadVisuals" type="Node2D" parent="." unique_id=602924538]
+z_index = 1
+position = Vector2(1.635, 0)
+script = ExtResource("7_f3pvo")
+SpreadCurve = SubResource("Curve_f3pvo")
+baseSpread = 0.3
+maxDistance = 600.0
 
 [connection signal="ready" from="WorldCamera/CanvasLayer/expie1Panel" to="WorldCamera" method="_on_expie_1_panel_ready"]
 
