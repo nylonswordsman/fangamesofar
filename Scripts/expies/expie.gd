@@ -3,13 +3,14 @@ class_name expie
 
 var aStarNavi = AStar2D.new()
 @onready var tML = get_parent()
-var selected: bool = false
-signal broadcast_expie_id(emitter)
+#var selected: bool = false
+#signal broadcast_expie_id(emitter)
 
 @export var openedBook: Dictionary = {
 	"expieID": 0,
-	"expieSpecies": "This may take a moment",
+	"expieSpecies": "???",
 	"expieName": "Please wait...",
+	"expieSerialNumber": "?-#####",
 	"expieStatus": "Reconnecting...",
 	"currentMood": 5,
 	"currentHunger": 5,
@@ -54,15 +55,15 @@ func _ready():
 #		broadcast_expie_id.emit(get_instance_id())
 		pass
 
-func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_released("QuickSelectExpie1"):
-		selected = not selected
-		print("selected: " + str(selected))
-	if Input.is_action_pressed("P") and selected:
-		for point in tML.path:
-			print(point)
-	elif Input.is_action_pressed("P") and selected != true:
-		print("expie wasnt selected")
+#func _input(_event: InputEvent) -> void:
+	#if Input.is_action_just_released("QuickSelectExpie1"):
+		#selected = not selected
+		#print("selected: " + str(selected))
+	#if Input.is_action_pressed("P") and selected:
+		#for point in tML.path:
+			#print(point)
+	#elif Input.is_action_pressed("P") and selected != true:
+		#print("expie wasnt selected")
 #region debug
 #	if Input.is_action_pressed("rightMouse"):
 #		broadcast_expie_id.emit(self as Object)
@@ -70,6 +71,9 @@ func _input(_event: InputEvent) -> void:
 
 func recalculateSubstats(): # called when equipment is changed or on load
 	pass
+
+func move(path):
+	print(path)
 
 #func _process(_delta: float) -> void:
 	#var ae = tML.aStarGrid.get_id_path(Vector2i(0,0),Vector2i(get_global_mouse_position()/17.0))

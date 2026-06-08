@@ -22,7 +22,7 @@ config/quit_on_go_back=false
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
 boot_splash/use_filter=false
-config/icon="uid://dmrs1iswlgkw"
+config/icon="uid://cmysp1rpojswq"
 
 [audio]
 

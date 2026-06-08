@@ -2,7 +2,7 @@ extends Node2D
 
 var title = ProjectSettings.get_setting("application/config/name")
 @export var currentFloor = 17
-@export var selectedEntity = Node2D
+#@export var selectedEntity = Node2D
 
 func _process(_delta):
 	# fps counter because why not

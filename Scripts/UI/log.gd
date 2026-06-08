@@ -19,5 +19,5 @@ func _on_terminal_text_submitted(new_text: String) -> void:
 			#args[2] should be the desired name
 			#if args[1] == "?", explain this
 		_: # < fallback to this if unknown command
-			%LogText.add_to_log(str('[color=ee0000]Unrecognized command: [/color]"' + str(args[0]) + '"'))
+			%LogText.add_to_log(str(str(args[0]) + ': Unrecognized command'))
 	%Terminal.clear()

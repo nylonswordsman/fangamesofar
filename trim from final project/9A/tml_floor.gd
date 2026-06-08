@@ -5,7 +5,7 @@ var aStarGrid:AStarGrid2D
 var size = self.get_used_rect().size
 var path:Array[Vector2] = []
 
-var selectedEntity: Node2D
+@export var selectedEntity: int
 
 
 ### note: im prolly thinking later we have this one do the worldgen stuff too
@@ -79,7 +79,8 @@ func _ready() -> void:
 				#print("empty")
 				pass
 
-#func _unhandled_input(event: InputEvent) -> void:
-#	if event.is_action_released("leftMouse"):
-#		get_global_mouse_position()
-#		pass
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_released("leftMouse"):
+		
+		get_global_mouse_position()
+		pass

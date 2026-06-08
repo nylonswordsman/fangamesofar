@@ -18,3 +18,9 @@ func _draw() -> void:
 	draw_rect(Rect2i(Vector2i(region.position.x,region.position.y)*17,Vector2i(region.size.x,region.size.y)*17),Color.RED,false,4)
 	if tML.path.size()>0:
 		draw_polyline(tML.path,Color.ORANGE,2)
+
+func _input(event: InputEvent):
+	if Input.is_action_just_pressed("M"):
+		var selectedEntity = instance_from_id(tML.selectedEntity)
+		if tML.selectedEntity.get_base_script() == expie:
+			selectedEntity.move(tML.path)

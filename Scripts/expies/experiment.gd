@@ -1,7 +1,7 @@
 extends expie
 class_name Experiment
 
-## experiment *specifically* has a maxHunger of 100
+## *specifically* experiment has a maxHunger of 100
 ## remove this comment once other species classes are being made
 var maxHunger: int = 100
 
@@ -24,5 +24,8 @@ func translateBook(book):
 #		
 
 
-func _on_area_2d_input_event():
-	get_parent().get_parent().get_parent().selectedEntity = self
+func _on_hitbox_input_event(event: InputEvent):
+	if Input.is_action_just_released("leftMouse"):
+		print(event)
+		tML.selectedEntity = self.get_instance_id()
+		print(tML.selectedEntity)
