@@ -282,7 +282,7 @@ script = ExtResource("17_rfnt3")
 position = Vector2(214, -39)
 script = ExtResource("6_fy33f")
 players = [NodePath("Instance1Normal"), NodePath("Instance1Combat"), NodePath("Instance2Normal"), NodePath("Instance2Combat")]
-Layer = 3
+font = ExtResource("11_dd4mk")
 
 [node name="Instance1Normal" type="AudioStreamPlayer" parent="MusicManager" unique_id=897403576]
 bus = &"Music"
@@ -298,6 +298,7 @@ bus = &"Music"
 bus = &"Music"
 
 [node name="SpreadVisuals" type="Node2D" parent="." unique_id=602924538]
+visible = false
 z_index = 1
 position = Vector2(1.635, 0)
 script = ExtResource("7_f3pvo")

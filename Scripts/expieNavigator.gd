@@ -20,7 +20,7 @@ func _draw() -> void:
 		draw_polyline(tML.path,Color.ORANGE,2)
 
 func _input(event: InputEvent):
-	if Input.is_action_just_pressed("M"):
+	if Input.is_action_just_pressed("M"):# PLEASE NAME THE ACTIONS IN ACTION MAP PROPERLY LATER PLEASEEEE
 		var selectedEntity = instance_from_id(tML.selectedEntity)
-		if tML.selectedEntity.get_base_script() == expie:
+		if selectedEntity.get_base_script() == expie:
 			selectedEntity.move(tML.path)
