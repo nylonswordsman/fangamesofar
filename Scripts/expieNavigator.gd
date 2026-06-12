@@ -5,7 +5,8 @@ extends Node2D
 func _process(_delta: float) -> void:
 	# the below line is really annoying it spams errors every milisecond when your mouse
 	# is out of bounds and floods the debugger
-	var wholePath = tML.aStarGrid.get_id_path(Vector2i(0,0),Vector2i(get_global_mouse_position()/17.0))
+	var pos = Vector2(tML.get_child(tML.selectedEntity).position/17.0)
+	var wholePath = tML.aStarGrid.get_id_path(pos,Vector2i(get_global_mouse_position()/17.0))
 	tML.path.clear()
 	for point in wholePath:
 		tML.path.append(Vector2(point*17.0)+Vector2(6.5,6.5))
@@ -21,6 +22,7 @@ func _draw() -> void:
 
 func _input(event: InputEvent):
 	if Input.is_action_just_pressed("M"):# PLEASE NAME THE ACTIONS IN ACTION MAP PROPERLY LATER PLEASEEEE
-		var selectedEntity = instance_from_id(tML.selectedEntity)
-		if selectedEntity.get_base_script() == expie:
+		var selectedEntity = tML.get_child(tML.selectedEntity)
+		print(selectedEntity)
+		if selectedEntity.get_script().get_global_name() == "Experiment":
 			selectedEntity.move(tML.path)

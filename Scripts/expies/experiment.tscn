@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://du2abpmf12lg"]
 
 [ext_resource type="Script" uid="uid://2g4jaeubx15n" path="res://Scripts/expies/experiment.gd" id="1_j2iio"]
-[ext_resource type="Texture2D" uid="uid://bhuhqeeep05g2" path="res://trim from final project/icon.svg" id="2_hf6ex"]
+[ext_resource type="Texture2D" uid="uid://duw420m15qnq7" path="res://trim from final project/stipit.png" id="2_o8ic7"]
 [ext_resource type="Script" uid="uid://dt3qncbxp06te" path="res://Scripts/expies/expie_hitbox.gd" id="3_o8ic7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qk1w8"]
@@ -13,9 +13,9 @@ script = ExtResource("1_j2iio")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=905331267]
 z_index = 12
-position = Vector2(8.5, 8.5)
-scale = Vector2(0.13281251, 0.13281251)
-texture = ExtResource("2_hf6ex")
+position = Vector2(8.5, 8.499999)
+scale = Vector2(0.56666666, 0.49999997)
+texture = ExtResource("2_o8ic7")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1716714458]
 z_index = 4

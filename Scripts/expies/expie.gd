@@ -73,7 +73,7 @@ func recalculateSubstats(): # called when equipment is changed or on load
 	pass
 
 func move(path):
-	print(path)
+	position = path[1]
 
 #func _process(_delta: float) -> void:
 	#var ae = tML.aStarGrid.get_id_path(Vector2i(0,0),Vector2i(get_global_mouse_position()/17.0))
