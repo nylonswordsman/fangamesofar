@@ -21,8 +21,9 @@ func _draw() -> void:
 		draw_polyline(tML.path,Color.ORANGE,2)
 
 func _input(event: InputEvent):
-	if Input.is_action_just_pressed("M"):# PLEASE NAME THE ACTIONS IN ACTION MAP PROPERLY LATER PLEASEEEE
+	if Input.is_action_just_pressed("QuickMove"):# PLEASE NAME THE ACTIONS IN ACTION MAP PROPERLY LATER PLEASEEEE
 		var selectedEntity = tML.get_child(tML.selectedEntity)
 		print(selectedEntity)
 		if selectedEntity.get_script().get_global_name() == "Experiment":
+			selectedEntity.openedBook.expieStatus = "Moving..."
 			selectedEntity.move(tML.path)

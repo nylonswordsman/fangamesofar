@@ -131,7 +131,7 @@ theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_constants/line_separation = -2
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
-text = ">> {default debug message whos purpose is dj jio}"
+text = ">> Nylonswordsman gained condition: [color=ff00ff]! Dumbass[/color]"
 fit_content = true
 vertical_alignment = 2
 script = ExtResource("10_oy8eg")
@@ -186,26 +186,88 @@ custom_minimum_size = Vector2(45, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("4_whfbe")
 texture = ExtResource("14_uy34o")
 expand_mode = 1
 
-[node name="Expie1Label" type="RichTextLabel" parent="WorldCamera/CanvasLayer/expie1Panel/VBoxContainer" unique_id=737745262]
+[node name="StatLabels" type="VBoxContainer" parent="WorldCamera/CanvasLayer/expie1Panel/VBoxContainer/HBoxContainer" unique_id=1706749527]
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Expie1STRLabel" type="RichTextLabel" parent="WorldCamera/CanvasLayer/expie1Panel/VBoxContainer/HBoxContainer/StatLabels" unique_id=1560254567]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("4_whfbe")
-theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
-text = "[color=ff9200]Expie1Name[i][right][color=c74c00]Voyager"
+text = "[color=ff9200]STR:[color=ff9200]05[color=ff0000]-1"
+fit_content = true
+
+[node name="Expie1DEXLabel" type="RichTextLabel" parent="WorldCamera/CanvasLayer/expie1Panel/VBoxContainer/HBoxContainer/StatLabels" unique_id=1659978076]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_whfbe")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "[color=ff9200]DEX:[color=ff9200]05[color=ff0000]-1"
+fit_content = true
+
+[node name="Expie1CONLabel" type="RichTextLabel" parent="WorldCamera/CanvasLayer/expie1Panel/VBoxContainer/HBoxContainer/StatLabels" unique_id=2059180757]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_whfbe")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "[color=ff9200]CON:[color=ff9200]05[color=ff0000]-1"
+fit_content = true
+
+[node name="Expie1INTLabel" type="RichTextLabel" parent="WorldCamera/CanvasLayer/expie1Panel/VBoxContainer/HBoxContainer/StatLabels" unique_id=974268357]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_whfbe")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "[color=ff9200]INT:[color=ff9200]05[color=ff0000]-1"
+fit_content = true
+
+[node name="Expie1WISLabel" type="RichTextLabel" parent="WorldCamera/CanvasLayer/expie1Panel/VBoxContainer/HBoxContainer/StatLabels" unique_id=1318385562]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_whfbe")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "[color=ff9200]WIS:05[color=ff0000]-1"
+fit_content = true
+
+[node name="Expie1CHALabel" type="RichTextLabel" parent="WorldCamera/CanvasLayer/expie1Panel/VBoxContainer/HBoxContainer/StatLabels" unique_id=647202285]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_whfbe")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "[color=ff9200]CHA:[color=ff9200]05[color=ff0000]-1"
+fit_content = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="WorldCamera/CanvasLayer/expie1Panel/VBoxContainer" unique_id=675766034]
+layout_mode = 2
+
+[node name="IDLabel" type="RichTextLabel" parent="WorldCamera/CanvasLayer/expie1Panel/VBoxContainer/HBoxContainer2" unique_id=1772466238]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_whfbe")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[color=a65f00]E-00000/[color=ff9200]WWWWWWWWW"
 fit_content = true
 
 [node name="DetailsPanel" type="TabContainer" parent="WorldCamera/CanvasLayer" unique_id=1922047852]
 offset_right = 304.0
 offset_bottom = 498.0
 theme = ExtResource("4_whfbe")
-current_tab = 0
+current_tab = 1
 tab_0/title = "Analysis"
 
 [node name="Inspect" type="PanelContainer" parent="WorldCamera/CanvasLayer/DetailsPanel" unique_id=848287487]
+visible = false
 clip_children = 1
 layout_mode = 2
 theme = ExtResource("4_whfbe")
@@ -244,10 +306,16 @@ selection_enabled = true
 script = ExtResource("16_p3wgh")
 
 [node name="Status" type="PanelContainer" parent="WorldCamera/CanvasLayer/DetailsPanel" unique_id=1858229912]
-visible = false
 layout_mode = 2
 theme = ExtResource("4_whfbe")
 metadata/_tab_index = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="WorldCamera/CanvasLayer/DetailsPanel/Status" unique_id=1110993088]
+layout_mode = 2
+theme = ExtResource("4_whfbe")
+bbcode_enabled = true
+text = "Conditions
+Readout"
 
 [node name="Storage" type="PanelContainer" parent="WorldCamera/CanvasLayer/DetailsPanel" unique_id=1714278223]
 visible = false

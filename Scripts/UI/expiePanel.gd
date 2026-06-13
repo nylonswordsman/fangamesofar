@@ -21,7 +21,7 @@ func _receive_expie_id(emitter):
 	associatedExpie = emitter
 	print("expie panel parced entity from recieved id: " + str(associatedExpie))
 	print(associatedExpie.openedBook.expieID, associatedExpie.openedBook.expieName)
-	%Expie1NameLabel.set_text(associatedExpie.openedBook.expieName)
+	%Expie1Label.set_text(associatedExpie.openedBook.expieName)
 
 #func _change_expie_name
 #func _change_expie_mood
